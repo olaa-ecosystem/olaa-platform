@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+.pnpm-store/
+__pycache__/
+
+# build output
+dist/
+build/
+coverage/
+
+# environment secrets
+.env
+.env.*
+!.env.example
+
+# local tooling
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# logs
+*.log
