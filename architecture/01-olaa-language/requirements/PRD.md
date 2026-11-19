@@ -171,6 +171,7 @@ Contract tối thiểu đề xuất (chờ nhánh 20):
 - `takenote.note.create_from_source` (command): `user_id`, `source_app = "language"`, `source_ref`, `title`, `body`, `tags`.
 - `billing.entitlement.get` (query): `user_id` → danh sách khóa học được truy cập, ngày hết hạn.
 - `language.flashcard.create_from_source` (command, Takenote → Language): xem PRD nhánh 03.
+- `language.lesson.completed`, `language.speaking.attempted`, `language.flashcard.created` (event, Language → Habits): xem PRD nhánh 02.
 - `takenote.notes.list_by_source` (query, Language → Takenote): xem PRD nhánh 03.
 
 ## 8. Lộ trình phát hành
