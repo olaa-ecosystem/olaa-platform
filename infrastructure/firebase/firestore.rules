@@ -21,5 +21,17 @@ service cloud.firestore {
         && request.resource.data.updatedAt is int
         && request.resource.data.schemaVersion is int;
     }
+
+    // 02 Olaa Habits: habits, check-ins, freezes and badges, one document per user.
+    // Same shape as Language: { stateJson: string, updatedAt: int (ms), schemaVersion: int }
+    match /habits/{uid} {
+      allow read, delete: if isOwner(uid);
+      allow create, update: if isOwner(uid)
+        && request.resource.data.keys().hasOnly(['stateJson', 'updatedAt', 'schemaVersion'])
+        && request.resource.data.stateJson is string
+        && request.resource.data.stateJson.size() < 900000
+        && request.resource.data.updatedAt is int
+        && request.resource.data.schemaVersion is int;
+    }
   }
 }

@@ -12,8 +12,9 @@ Cấu hình cho Firebase project chung `olaa-ecosystem` (ADR-0004). Mỗi app t�
 | Đường dẫn | App | Nội dung |
 |---|---|---|
 | `language/{uid}` | 01 Olaa Language | Tiến độ học, lưu dạng JSON trong `stateJson` |
+| `habits/{uid}` | 02 Olaa Habits | Thói quen, lượt hoàn thành, ngày đóng băng, huy hiệu; JSON trong `stateJson` |
 
-Thêm vùng mới (`habits/…`, `takenote/…`, `events/…`) khi app tương ứng bắt đầu dùng Firebase.
+Thêm vùng mới (`takenote/…`, `events/…`) khi app tương ứng bắt đầu dùng Firebase.
 
 ## Deploy luật
 
