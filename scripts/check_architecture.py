@@ -5,7 +5,7 @@ Checks:
   1. Exactly 22 branch folders 00..21 exist, each with the required files.
   2. Every module listed in OLAA_MASTER_ARCHITECTURE.md section 4 has a spec file
      and exactly one row in MODULE_REGISTRY.md (and no extra rows).
-  3. No empty files anywhere in the repository (outside .git).
+  3. No empty files anywhere in the repository (outside .git and node_modules).
   4. Relative Markdown links under architecture/ and the root docs resolve.
   5. Legacy names (AtoZ, OLAA Habit/Note, olaa-habitstracker, olaa-note) appear only
      in allowed history files.
@@ -62,8 +62,10 @@ for mid, slug in doc_mods:
         err(f"missing module spec {d.name}/modules/{mid}-{slug}.md")
 
 # 3. empty files
+SKIP_DIRS = {".git", "node_modules"}
+
 for p in ROOT.rglob("*"):
-    if ".git" in p.relative_to(ROOT).parts:
+    if SKIP_DIRS & set(p.relative_to(ROOT).parts):
         continue
     if p.is_file() and p.stat().st_size == 0:
         err(f"empty file: {p.relative_to(ROOT)}")
@@ -81,7 +83,12 @@ for f in md_files:
 # 5. legacy names
 for f in ROOT.rglob("*"):
     rel = f.relative_to(ROOT).as_posix()
-    if not f.is_file() or rel.startswith(".git/") or rel in LEGACY_ALLOWED or rel.startswith(LEGACY_ALLOWED_DIRS):
+    if (
+        not f.is_file()
+        or SKIP_DIRS & set(f.relative_to(ROOT).parts)
+        or rel in LEGACY_ALLOWED
+        or rel.startswith(LEGACY_ALLOWED_DIRS)
+    ):
         continue
     try:
         text = f.read_text(encoding="utf-8")
