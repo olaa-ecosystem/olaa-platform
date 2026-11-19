@@ -24,7 +24,7 @@ Không đánh dấu IMPLEMENTED khi mới có thư mục hoặc file khung.
 | 00 | [OLAA PLATFORM](00-olaa-platform/README.md) | SCAFFOLDED | NOT STARTED | 7 | `olaa-platform` | — |
 | 01 | [OLAA LANGUAGE](01-olaa-language/README.md) | SCAFFOLDED | NOT STARTED | 14 | `olaa-language` | — |
 | 02 | [OLAA HABITS](02-olaa-habits/README.md) | SCAFFOLDED | IN PROGRESS | 12 | `olaa-habits` | MVP P0 + đăng nhập/đồng bộ trên branch `feat/habits-mvp` |
-| 03 | [OLAA TAKENOTE](03-olaa-takenote/README.md) | SCAFFOLDED | NOT STARTED | 15 | `olaa-takenote` | — |
+| 03 | [OLAA TAKENOTE](03-olaa-takenote/README.md) | SCAFFOLDED | IN PROGRESS | 15 | `olaa-takenote` | MVP P0 (lưu trên máy) trên branch `feat/takenote-mvp` |
 | 04 | [SHARED CORE](04-shared-core/README.md) | SCAFFOLDED | NOT STARTED | 13 | `olaa-platform` | — |
 | 05 | [BACKEND SERVICES](05-backend-services/README.md) | SCAFFOLDED | NOT STARTED | 14 | `olaa-platform` | — |
 | 06 | [CONTENT MANAGEMENT](06-content-management/README.md) | SCAFFOLDED | NOT STARTED | 10 | `olaa-platform` | — |
