@@ -4,6 +4,9 @@ Mọi thay đổi đáng chú ý của `olaa-platform`. Định dạng theo Keep
 
 ## Unreleased
 
+### Changed
+- Nhánh 01 OLAA LANGUAGE: cập nhật trạng thái mã nguồn và 14 module theo MVP thực tế trong `olaa-language` (đã chạy lint, typecheck, test, build).
+
 ### Added
 - `architecture/OLAA_MASTER_ARCHITECTURE.md`, chuyển từ bản AtoZ (ADR-0002).
 - Thư mục kiến trúc cho 22 nhánh, đặc tả khung cho 229 module.

@@ -19,20 +19,20 @@ Tổng: 229 module trong 22 nhánh.
 | 00.05 | tenant-management | 00 | `olaa-platform`: `apps/platform-shell/`, `services/platform/`, `services/identity/` | Platform team / platform domain | NOT STARTED | [spec](00-olaa-platform/modules/00.05-tenant-management.md) |
 | 00.06 | platform-experience | 00 | `olaa-platform`: `apps/platform-shell/`, `services/platform/`, `services/identity/` | Platform team / platform domain | NOT STARTED | [spec](00-olaa-platform/modules/00.06-platform-experience.md) |
 | 00.07 | platform-configuration | 00 | `olaa-platform`: `apps/platform-shell/`, `services/platform/`, `services/identity/` | Platform team / platform domain | NOT STARTED | [spec](00-olaa-platform/modules/00.07-platform-configuration.md) |
-| 01.01 | learning-foundation | 01 | repository `olaa-language` (đường dẫn trong repo chưa chốt) | Language domain | NOT STARTED | [spec](01-olaa-language/modules/01.01-learning-foundation.md) |
-| 01.02 | curriculum | 01 | repository `olaa-language` (đường dẫn trong repo chưa chốt) | Language domain | NOT STARTED | [spec](01-olaa-language/modules/01.02-curriculum.md) |
-| 01.03 | vocabulary | 01 | repository `olaa-language` (đường dẫn trong repo chưa chốt) | Language domain | NOT STARTED | [spec](01-olaa-language/modules/01.03-vocabulary.md) |
+| 01.01 | learning-foundation | 01 | `olaa-language`: `src/features/onboarding/` | Language domain | TESTED (một phần) | [spec](01-olaa-language/modules/01.01-learning-foundation.md) |
+| 01.02 | curriculum | 01 | `olaa-language`: `src/features/curriculum/` | Language domain | TESTED (một phần) | [spec](01-olaa-language/modules/01.02-curriculum.md) |
+| 01.03 | vocabulary | 01 | `olaa-language`: `src/features/curriculum/content.ts` | Language domain | IMPLEMENTED (một phần) | [spec](01-olaa-language/modules/01.03-vocabulary.md) |
 | 01.04 | grammar | 01 | repository `olaa-language` (đường dẫn trong repo chưa chốt) | Language domain | NOT STARTED | [spec](01-olaa-language/modules/01.04-grammar.md) |
-| 01.05 | listening | 01 | repository `olaa-language` (đường dẫn trong repo chưa chốt) | Language domain | NOT STARTED | [spec](01-olaa-language/modules/01.05-listening.md) |
+| 01.05 | listening | 01 | `olaa-language`: `src/features/exercises/` (kiểu `listen`) | Language domain | IMPLEMENTED (một phần) | [spec](01-olaa-language/modules/01.05-listening.md) |
 | 01.06 | speaking | 01 | repository `olaa-language` (đường dẫn trong repo chưa chốt) | Language domain | NOT STARTED | [spec](01-olaa-language/modules/01.06-speaking.md) |
 | 01.07 | reading | 01 | repository `olaa-language` (đường dẫn trong repo chưa chốt) | Language domain | NOT STARTED | [spec](01-olaa-language/modules/01.07-reading.md) |
 | 01.08 | writing | 01 | repository `olaa-language` (đường dẫn trong repo chưa chốt) | Language domain | NOT STARTED | [spec](01-olaa-language/modules/01.08-writing.md) |
-| 01.09 | exercises | 01 | repository `olaa-language` (đường dẫn trong repo chưa chốt) | Language domain | NOT STARTED | [spec](01-olaa-language/modules/01.09-exercises.md) |
+| 01.09 | exercises | 01 | `olaa-language`: `src/features/exercises/` | Language domain | TESTED | [spec](01-olaa-language/modules/01.09-exercises.md) |
 | 01.10 | assessment | 01 | repository `olaa-language` (đường dẫn trong repo chưa chốt) | Language domain | NOT STARTED | [spec](01-olaa-language/modules/01.10-assessment.md) |
-| 01.11 | flashcards | 01 | repository `olaa-language` (đường dẫn trong repo chưa chốt) | Language domain | NOT STARTED | [spec](01-olaa-language/modules/01.11-flashcards.md) |
-| 01.12 | learning-progress | 01 | repository `olaa-language` (đường dẫn trong repo chưa chốt) | Language domain | NOT STARTED | [spec](01-olaa-language/modules/01.12-learning-progress.md) |
-| 01.13 | learning-intelligence | 01 | repository `olaa-language` (đường dẫn trong repo chưa chốt) | Language domain | NOT STARTED | [spec](01-olaa-language/modules/01.13-learning-intelligence.md) |
-| 01.14 | language-settings | 01 | repository `olaa-language` (đường dẫn trong repo chưa chốt) | Language domain | NOT STARTED | [spec](01-olaa-language/modules/01.14-language-settings.md) |
+| 01.11 | flashcards | 01 | `olaa-language`: `src/features/flashcards-srs/` | Language domain | TESTED | [spec](01-olaa-language/modules/01.11-flashcards.md) |
+| 01.12 | learning-progress | 01 | `olaa-language`: `src/features/learning-progress/` | Language domain | TESTED (một phần) | [spec](01-olaa-language/modules/01.12-learning-progress.md) |
+| 01.13 | learning-intelligence | 01 | `olaa-language`: `src/features/revision-mistakes/` | Language domain | TESTED (một phần) | [spec](01-olaa-language/modules/01.13-learning-intelligence.md) |
+| 01.14 | language-settings | 01 | `olaa-language`: `src/features/learning-progress/ProfilePage.tsx` | Language domain | IMPLEMENTED (một phần) | [spec](01-olaa-language/modules/01.14-language-settings.md) |
 | 02.01 | habit-management | 02 | repository `olaa-habits` (đường dẫn trong repo chưa chốt) | Habits domain | NOT STARTED | [spec](02-olaa-habits/modules/02.01-habit-management.md) |
 | 02.02 | scheduling | 02 | repository `olaa-habits` (đường dẫn trong repo chưa chốt) | Habits domain | NOT STARTED | [spec](02-olaa-habits/modules/02.02-scheduling.md) |
 | 02.03 | habit-tracking | 02 | repository `olaa-habits` (đường dẫn trong repo chưa chốt) | Habits domain | NOT STARTED | [spec](02-olaa-habits/modules/02.03-habit-tracking.md) |
