@@ -1,0 +1,25 @@
+rules_version = '2';
+
+// Firestore rules for the shared Firebase project `olaa-ecosystem` (ADR-0004).
+// Each app owns one top-level area and may only touch the signed-in user's own document.
+// Anything not matched below is denied.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isOwner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    // 01 Olaa Language: learner progress, one document per user.
+    // Shape: { stateJson: string, updatedAt: int (ms), schemaVersion: int }
+    match /language/{uid} {
+      allow read, delete: if isOwner(uid);
+      allow create, update: if isOwner(uid)
+        && request.resource.data.keys().hasOnly(['stateJson', 'updatedAt', 'schemaVersion'])
+        && request.resource.data.stateJson is string
+        && request.resource.data.stateJson.size() < 900000
+        && request.resource.data.updatedAt is int
+        && request.resource.data.schemaVersion is int;
+    }
+  }
+}

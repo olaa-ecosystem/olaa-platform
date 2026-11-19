@@ -20,3 +20,4 @@ Mỗi mục gồm: ngày, nhánh hoặc repository nguồn, nhánh bị ảnh h�
 | 00 | 01, 02, 03, 04, 09 | dependency | Cả ba app là web responsive, dùng chung stack React + Vite + TypeScript | ADR-0003 | `olaa-habits`, `olaa-takenote` dùng stack của `olaa-language` |
 | 05 | Tất cả | dependency | Firebase làm backend và auth provider; event giữa các app đi qua Firestore `events/` và Cloud Functions | ADR-0004 | Mỗi app truy cập Firebase qua lớp adapter, chỉ trong vùng dữ liệu của mình |
 | 14 | 01, 02, 03 | dependency | Thu phí qua cổng thanh toán Việt Nam; app đọc quyền truy cập qua `billing.entitlement.get` | ADR-0005 | Chọn cổng cụ thể trong ADR sau |
+| 05, 09 | 01 | dependency | Firestore rules dùng chung cho project `olaa-ecosystem`; vùng `language/{uid}` cho tiến độ học của Language | ADR-0004, `infrastructure/firebase/` | Language ghi đúng shape `stateJson`, `updatedAt`, `schemaVersion` |
