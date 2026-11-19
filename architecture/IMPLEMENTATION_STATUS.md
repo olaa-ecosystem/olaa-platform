@@ -17,12 +17,12 @@ Trạng thái thực tế của 22 nhánh. Cập nhật mỗi khi một nhánh t
 
 Không đánh dấu IMPLEMENTED khi mới có thư mục hoặc file khung.
 
-## Trạng thái hiện tại (2026-11-18)
+## Trạng thái hiện tại (2026-11-19)
 
 | Nhánh | Tên | Tài liệu kiến trúc | Mã nguồn | Số module | Repository | Ghi chú |
 |---|---|---|---|---|---|---|
 | 00 | [OLAA PLATFORM](00-olaa-platform/README.md) | SCAFFOLDED | NOT STARTED | 7 | `olaa-platform` | — |
-| 01 | [OLAA LANGUAGE](01-olaa-language/README.md) | SCAFFOLDED | NOT STARTED | 14 | `olaa-language` | — |
+| 01 | [OLAA LANGUAGE](01-olaa-language/README.md) | SCAFFOLDED | IMPLEMENTED (MVP, một phần) | 14 | `olaa-language` | MVP web chạy độc lập, lưu `localStorage`. 9/14 module có mã: 6 TESTED (2 đủ, 4 một phần), 3 IMPLEMENTED một phần, 5 NOT STARTED. Lint, typecheck, test (69), build đạt tại commit `46e5f58` (2026-11-19). Chi tiết: README nhánh, mục 11 |
 | 02 | [OLAA HABITS](02-olaa-habits/README.md) | SCAFFOLDED | NOT STARTED | 12 | `olaa-habits` | — |
 | 03 | [OLAA TAKENOTE](03-olaa-takenote/README.md) | SCAFFOLDED | NOT STARTED | 15 | `olaa-takenote` | — |
 | 04 | [SHARED CORE](04-shared-core/README.md) | SCAFFOLDED | NOT STARTED | 13 | `olaa-platform` | — |
