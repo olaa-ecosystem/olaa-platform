@@ -40,7 +40,11 @@ service cloud.firestore {
       allow read: if request.auth != null && resource.data.userId == request.auth.uid;
       allow create: if request.auth != null
         && eventId.matches(request.auth.uid + '_.+')
-        && request.resource.data.keys().hasOnly(['type', 'userId', 'date', 'occurredAt', 'source', 'payload'])
+        && request.resource.data.keys().hasOnly(['id', 'version', 'type', 'userId', 'date', 'occurredAt', 'source', 'payload'])
+        // Envelope v1 carries its own id and version. Both are optional so events from app
+        // builds released before v1 are still accepted; when present they must be right.
+        && (!('id' in request.resource.data) || request.resource.data.id == eventId)
+        && (!('version' in request.resource.data) || request.resource.data.version == 1)
         && request.resource.data.userId == request.auth.uid
         && request.resource.data.source == 'language'
         && request.resource.data.type in ['language.daily_goal.completed', 'language.lesson.completed']

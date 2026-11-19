@@ -10,9 +10,10 @@ async function check(name, p) { try { await p; results.push(['PASS', name]); } c
   const anon = env.unauthenticatedContext().firestore();
   const sync = { stateJson: '{"version":1}', updatedAt: 1, schemaVersion: 1 };
   const goal = { type: 'language.daily_goal.completed', date: '2026-11-19', payload: { courseId: 'en-from-vi', xp: 20, goalXp: 20 }, userId: 'alice', occurredAt: 1, source: 'language' };
-  const lesson = { type: 'language.lesson.completed', date: '2026-11-19', payload: { courseId: 'en-from-vi', lessonId: 'u1-greetings' }, userId: 'alice', occurredAt: 1, source: 'language' };
   const goalId = 'alice_language.daily_goal.completed_2026-11-19';
   const lessonId = 'alice_language.lesson.completed_en-from-vi_u1-greetings';
+  // Envelope v1 (contracts/events/language-events.md): id and version in the body.
+  const lesson = { id: lessonId, version: 1, type: 'language.lesson.completed', date: '2026-11-19', payload: { courseId: 'en-from-vi', lessonId: 'u1-greetings' }, userId: 'alice', occurredAt: 1, source: 'language' };
 
   await check('language: owner writes', assertSucceeds(setDoc(doc(alice, 'language/alice'), sync)));
   await check('language: other user reads → denied', assertFails(getDoc(doc(bob, 'language/alice'))));
@@ -20,8 +21,11 @@ async function check(name, p) { try { await p; results.push(['PASS', name]); } c
   await check('habits: owner reads', assertSucceeds(getDoc(doc(alice, 'habits/alice'))));
   await check('habits: other user writes → denied', assertFails(setDoc(doc(bob, 'habits/alice'), sync)));
   await check('habits: extra field → denied', assertFails(setDoc(doc(alice, 'habits/alice'), { ...sync, x: 1 })));
-  await check('events: Language daily goal (emitter shape)', assertSucceeds(setDoc(doc(alice, 'events', goalId), goal)));
-  await check('events: Language new lesson (emitter shape)', assertSucceeds(setDoc(doc(alice, 'events', lessonId), lesson)));
+  await check('events: Language daily goal (pre-v1 shape still accepted)', assertSucceeds(setDoc(doc(alice, 'events', goalId), goal)));
+  await check('events: envelope v1 with wrong id → denied', assertFails(setDoc(doc(alice, 'events', 'alice_v1a'), { ...lesson, id: 'alice_other' })));
+  await check('events: unknown envelope version → denied', assertFails(setDoc(doc(alice, 'events', 'alice_v1b'), { ...lesson, id: 'alice_v1b', version: 2 })));
+  await check('events: version as text → denied', assertFails(setDoc(doc(alice, 'events', 'alice_v1c'), { ...lesson, id: 'alice_v1c', version: '1' })));
+  await check('events: Language new lesson (envelope v1)', assertSucceeds(setDoc(doc(alice, 'events', lessonId), lesson)));
   await check('events: repeat write of same event → denied (immutable)', assertFails(setDoc(doc(alice, 'events', goalId), goal)));
   await check('events: update → denied', assertFails(updateDoc(doc(alice, 'events', goalId), { date: '2026-11-18' })));
   await check('events: delete → denied', assertFails(deleteDoc(doc(alice, 'events', goalId))));
