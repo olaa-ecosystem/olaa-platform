@@ -28,6 +28,7 @@ Nhánh nào phụ thuộc nhánh nào, ở mức nào và qua interface nào. Ng
 | 01 OLAA LANGUAGE | 06 CONTENT MANAGEMENT | Thiết kế | Chưa định nghĩa | PENDING |
 | 01 OLAA LANGUAGE | 05 BACKEND SERVICES | Thiết kế | Chưa định nghĩa | PENDING |
 | 01 OLAA LANGUAGE | 07 DATABASE ARCHITECTURE | Thiết kế | Chưa định nghĩa | PENDING |
+| 02 OLAA HABITS | 01 OLAA LANGUAGE | Interface | `contracts/events/language-events.md` (domain event qua Firestore `events/`) | PROPOSED |
 | 02 OLAA HABITS | 00 OLAA PLATFORM | Thiết kế | Chưa định nghĩa | PENDING |
 | 02 OLAA HABITS | 04 SHARED CORE | Thiết kế | Chưa định nghĩa | PENDING |
 | 02 OLAA HABITS | 05 BACKEND SERVICES | Thiết kế | Chưa định nghĩa | PENDING |

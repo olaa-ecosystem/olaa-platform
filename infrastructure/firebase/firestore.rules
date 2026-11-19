@@ -33,5 +33,22 @@ service cloud.firestore {
         && request.resource.data.updatedAt is int
         && request.resource.data.schemaVersion is int;
     }
+
+    // Cross-app events (contracts/events/language-events.md). Immutable: create only.
+    // Each user reads only their own events; the id must start with the writer's uid.
+    match /events/{eventId} {
+      allow read: if request.auth != null && resource.data.userId == request.auth.uid;
+      allow create: if request.auth != null
+        && eventId.matches(request.auth.uid + '_.+')
+        && request.resource.data.keys().hasOnly(['type', 'userId', 'date', 'occurredAt', 'source', 'payload'])
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.source == 'language'
+        && request.resource.data.type in ['language.daily_goal.completed', 'language.lesson.completed']
+        && request.resource.data.date is string
+        && request.resource.data.date.matches('[0-9]{4}-[0-9]{2}-[0-9]{2}')
+        && request.resource.data.occurredAt is int
+        && request.resource.data.payload is map
+        && request.resource.data.payload.size() <= 5;
+    }
   }
 }
