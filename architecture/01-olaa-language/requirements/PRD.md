@@ -136,7 +136,9 @@ Mã yêu cầu theo dạng `REQ-01-NNN`, gắn với module con của nhánh 01.
 | REQ-01-041 | 01.12 learning-progress | Đồng bộ tiến độ giữa các thiết bị | P1 | Tiến độ trên thiết bị B khớp với thiết bị A sau khi đồng bộ; xử lý được xung đột khi học offline ngắn |
 | REQ-01-042 | 01.03 vocabulary | Lưu từ, điểm ngữ pháp hoặc ghi chú sang OLAA Takenote | P1 | Chỉ gửi qua contract hoặc domain event; Language không ghi trực tiếp vào dữ liệu của Takenote |
 | REQ-01-043 | 01.12 learning-progress | Báo hoàn thành mục tiêu ngày sang OLAA Habits | P1 | Phát domain event khi đạt mục tiêu ngày; Habits tự đánh dấu thói quen |
-| REQ-01-044 | — (nhánh 14) | Thuê bao theo tháng hoặc năm | P1 | Gói, giá và dùng thử do nhánh 14 quản lý; Language chỉ đọc quyền truy cập qua contract |
+| REQ-01-044 | — (nhánh 14) | Thuê bao theo tháng hoặc năm, là một gói Olaa chung cho Language, Takenote và Habits | P1 | Gói, giá và dùng thử do nhánh 14 quản lý; Language chỉ đọc quyền truy cập qua contract |
+| REQ-01-045 | 01.11 flashcards | Nhận yêu cầu tạo flashcard từ OLAA Takenote | P1 | Thẻ tạo từ Takenote vào chung lịch SRS và có liên kết quay về ghi chú nguồn |
+| REQ-01-046 | 01.02 curriculum | Nút "Ghi chú của bài này" mở danh sách ghi chú Takenote gắn với bài | P1 | Lấy danh sách qua `takenote.notes.list_by_source` |
 
 ## 6. Yêu cầu phi chức năng
 
@@ -168,6 +170,8 @@ Contract tối thiểu đề xuất (chờ nhánh 20):
 - `language.daily_goal.completed` (event): `user_id`, `course_id`, `date`, `xp`, `minutes`.
 - `takenote.note.create_from_source` (command): `user_id`, `source_app = "language"`, `source_ref`, `title`, `body`, `tags`.
 - `billing.entitlement.get` (query): `user_id` → danh sách khóa học được truy cập, ngày hết hạn.
+- `language.flashcard.create_from_source` (command, Takenote → Language): xem PRD nhánh 03.
+- `takenote.notes.list_by_source` (query, Language → Takenote): xem PRD nhánh 03.
 
 ## 8. Lộ trình phát hành
 
@@ -209,7 +213,7 @@ Lý do chọn R1 như trên: R1 kiểm chứng đúng hai vấn đề ở mục 
 
 1. Duyệt lộ trình phát hành ở mục 8, hay giữ toàn bộ MVP vào 12/2026?
 2. Ở câu 7 chủ dự án chọn "tự biên soạn + mua bản quyền", nhưng ở câu 14 lại nói nội dung lấy từ nguồn mở. PRD này ghi R1 dùng nguồn mở và việc mua bản quyền để sau. Có đúng không?
-3. Có dùng thử miễn phí không? Giá bao nhiêu? Một gói mở cả 3 khóa hay tách theo từng khóa?
+3. Có dùng thử miễn phí không, và giá bao nhiêu? Đã chốt là gói Olaa chung cho cả hệ sinh thái (phỏng vấn Takenote, câu 6).
 4. Có xác nhận gỡ khóa "tiếng Việt cho người nói tiếng Anh" hiện có không?
 5. Có duyệt ngưỡng đạt kiểm tra cấp độ 70% và giới hạn 7 từ mới mỗi bài không?
 6. Chọn nhà cung cấp chấm phát âm nào? Cần ADR.
