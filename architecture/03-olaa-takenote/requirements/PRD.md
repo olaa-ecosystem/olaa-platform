@@ -20,7 +20,7 @@ Học sinh, sinh viên học trên iPad gặp hai vấn đề:
 1. **Phải dùng hai app.** Một app để viết tay, một app khác để gõ, nên ghi chú của một buổi học bị chia ra hai nơi.
 2. **Ghi chú không nối với việc học.** Từ vựng hay ngữ pháp ghi lại không quay về được bài học, và cũng không biến thành bài ôn.
 
-OLAA Takenote giải quyết hai vấn đề này bằng hai cách: cho gõ và viết tay trên cùng một trang, và nối hai chiều với OLAA Language.
+Olaa TakeNote giải quyết hai vấn đề này bằng hai cách: cho gõ và viết tay trên cùng một trang, và nối hai chiều với Olaa Language.
 
 ## 2. Người dùng mục tiêu
 
@@ -33,8 +33,8 @@ OLAA Takenote giải quyết hai vấn đề này bằng hai cách: cho gõ và 
 | Chỉ số | Định nghĩa | Mục tiêu (đề xuất) |
 |---|---|---|
 | Trang kết hợp | % trang được sửa trong tuần có cả chữ gõ và nét viết tay | ≥ 30% |
-| Kết nối với Language | Số ghi chú hoặc flashcard nối giữa Takenote và Language, tính trên mỗi người dùng hoạt động mỗi tuần | ≥ 3 |
-| Dùng chéo | % người dùng Language có dùng Takenote, và ngược lại | Chốt sau 4 tuần có dữ liệu nền |
+| Kết nối với Language | Số ghi chú hoặc flashcard nối giữa TakeNote và Language, tính trên mỗi người dùng hoạt động mỗi tuần | ≥ 3 |
+| Dùng chéo | % người dùng Language có dùng TakeNote, và ngược lại | Chốt sau 4 tuần có dữ liệu nền |
 
 ## 4. Phạm vi
 
@@ -46,8 +46,8 @@ OLAA Takenote giải quyết hai vấn đề này bằng hai cách: cho gõ và 
 - Gắn ảnh và file.
 - Xuất PDF và chia sẻ.
 - Tự lưu, hoàn tác và làm lại.
-- Đăng nhập OLAA ID, đồng bộ lên cloud.
-- Nối hai chiều với OLAA Language.
+- Đăng nhập Olaa ID, đồng bộ lên cloud.
+- Nối hai chiều với Olaa Language.
 - Nằm trong gói thuê bao Olaa chung.
 
 ### Để sau MVP
@@ -68,7 +68,7 @@ OLAA Takenote giải quyết hai vấn đề này bằng hai cách: cho gõ và 
 
 | Tài liệu | Hiện tại | Theo PRD |
 |---|---|---|
-| `architecture/03-olaa-takenote/modules/03.05-apple-pencil.md` | "PencilKit/native input integration" | Viết tay trên web bằng Pointer Events; cần ADR nền tảng |
+| `architecture/03-olaa-takenote/modules/03.05-apple-pencil.md` | "PencilKit/native input integration" | Viết tay trên web bằng Pointer Events (ADR-0003); đã cập nhật mô tả module |
 | `olaa-takenote/docs/product/UX_PRINCIPLES.md` | Máy tính và iPad trước | iPad là thiết bị chính, có Apple Pencil |
 
 ## 5. Yêu cầu chức năng
@@ -104,19 +104,19 @@ OLAA Takenote giải quyết hai vấn đề này bằng hai cách: cho gõ và 
 | REQ-03-023 | 03.13 export-sharing | Xuất sổ tay hoặc trang ra PDF | P0 | PDF xuất ra giữ đúng chữ, nét viết, ảnh và trang PDF gốc |
 | REQ-03-024 | 03.13 export-sharing | Chia sẻ file PDF đã xuất | P0 | Dùng Web Share API trên iPad, có phương án tải file thay thế |
 
-### 5.4 Nối với OLAA Language
+### 5.4 Nối với Olaa Language
 
 | Mã | Module | Yêu cầu | Ưu tiên | Acceptance criteria |
 |---|---|---|---|---|
 | REQ-03-030 | 03.02 note-management | Nhận ghi chú gửi từ Language (từ vựng, ngữ pháp, câu ví dụ) vào một sổ tay riêng | P1 | Ghi chú tạo từ Language có liên kết nguồn; cùng contract với REQ-01-042 |
-| REQ-03-031 | 03.03 rich-text-editor | Tô chọn chữ đã gõ, tạo flashcard trong Language | P1 | Takenote gửi yêu cầu qua contract; Language tạo thẻ và quản lý lịch SRS. Chữ viết tay chưa hỗ trợ (cần OCR) |
+| REQ-03-031 | 03.03 rich-text-editor | Tô chọn chữ đã gõ, tạo flashcard trong Language | P1 | TakeNote gửi yêu cầu qua contract; Language tạo thẻ và quản lý lịch SRS. Chữ viết tay chưa hỗ trợ (cần OCR) |
 | REQ-03-032 | 03.10 organization | Ghi chú gắn với bài hoặc unit Language; mở được bài từ ghi chú | P1 | Language truy vấn được danh sách ghi chú theo bài |
 
 ### 5.5 Tài khoản và thuê bao
 
 | Mã | Module | Yêu cầu | Ưu tiên | Acceptance criteria |
 |---|---|---|---|---|
-| REQ-03-040 | — (nhánh 00/05) | Đăng nhập OLAA ID | P1 | Dùng chung tài khoản với Language |
+| REQ-03-040 | — (nhánh 00/05) | Đăng nhập Olaa ID | P1 | Dùng chung tài khoản với Language |
 | REQ-03-041 | 03.12 history-recovery | Đồng bộ ghi chú và file lên cloud | P1 | Mở trên thiết bị khác thấy đúng nội dung. Khi sửa xung đột trên hai thiết bị: giữ cả hai bản và báo cho người dùng |
 | REQ-03-042 | — (nhánh 14) | Nằm trong gói thuê bao Olaa chung | P1 | Đọc quyền truy cập qua `billing.entitlement.get` |
 
@@ -135,22 +135,22 @@ OLAA Takenote giải quyết hai vấn đề này bằng hai cách: cho gõ và 
 
 | Phụ thuộc | Nhánh | Dùng cho | Trạng thái nhánh (2026-11-18) |
 |---|---|---|---|
-| OLAA ID / Auth | 00, 05, 08 | REQ-03-040 | NOT STARTED; auth provider chưa chốt |
+| Olaa ID / Auth | 00, 05, 08 | REQ-03-040 | NOT STARTED; auth provider chưa chốt |
 | Backend đồng bộ | 05, 07 | REQ-03-041 | NOT STARTED |
 | Kho lưu file PDF và ảnh | 21 | REQ-03-020, 022, 041 | NOT STARTED |
 | Thuê bao | 14 | REQ-03-042 | NOT STARTED |
 | Analytics | 17 | Mục 3 | NOT STARTED |
-| OLAA Language | 01 | REQ-03-030, 031, 032 | Contract `PENDING` |
+| Olaa Language | 01 | REQ-03-030, 031, 032 | Contract `PENDING` |
 | Contract và event | 20 | REQ-03-030, 031, 032 | NOT STARTED |
 
 Contract tối thiểu đề xuất (chờ nhánh 20):
 
-- `takenote.note.create_from_source` (command, Language → Takenote): `user_id`, `source_app`, `source_ref`, `title`, `body`, `tags`. Dùng chung với PRD Language.
-- `language.flashcard.create_from_source` (command, Takenote → Language): `user_id`, `course_id`, `front`, `back`, `source_app = "takenote"`, `source_ref`.
-- `takenote.notes.list_by_source` (query, Language → Takenote): `user_id`, `source_app`, `source_ref` → danh sách `note_id`, `title`, `updated_at`.
+- `takenote.note.create_from_source` (command, Language → TakeNote): `user_id`, `source_app`, `source_ref`, `title`, `body`, `tags`. Dùng chung với PRD Language.
+- `language.flashcard.create_from_source` (command, TakeNote → Language): `user_id`, `course_id`, `front`, `back`, `source_app = "takenote"`, `source_ref`.
+- `takenote.notes.list_by_source` (query, Language → TakeNote): `user_id`, `source_app`, `source_ref` → danh sách `note_id`, `title`, `updated_at`.
 - `billing.entitlement.get` (query): dùng chung với Language.
 
-Quyết định cần ADR: nền tảng client của Takenote là web (đang nằm trong "Quyết định đang chặn" của `IMPLEMENTATION_STATUS.md`).
+Quyết định đã chốt: nền tảng web (ADR-0003), Firebase (ADR-0004), cổng thanh toán Việt Nam (ADR-0005).
 
 ## 8. Lộ trình phát hành
 
@@ -160,9 +160,9 @@ Ba app ra mắt cùng lúc. Trước đó là các mốc xây dựng nội bộ,
 
 | Mốc | Nội dung | Điều kiện xong |
 |---|---|---|
-| M1 — Nền tảng chung | ADR nền tảng client và auth provider; OLAA ID, backend đồng bộ, event bus, kho lưu file, thuê bao, analytics ở `olaa-platform` | Một tài khoản đăng nhập được vào cả ba app; event đi được từ app này sang app khác |
+| M1 — Nền tảng chung | Firebase (ADR-0004): Olaa ID bằng Firebase Authentication, đồng bộ bằng Firestore, event qua `events/` và Cloud Functions, Cloud Storage, Google Analytics; thuê bao qua cổng thanh toán Việt Nam (ADR-0005) | Một tài khoản đăng nhập được vào cả ba app; event đi được từ app này sang app khác |
 | M2 — Lõi từng app | Toàn bộ yêu cầu P0 của ba app | Đạt acceptance criteria của mọi P0 |
-| M3 — Tích hợp | Toàn bộ yêu cầu P1: Language ↔ Takenote, Language → Habits, chấm phát âm, nhắc nhở, thuê bao | Contract test giữa các app đạt |
+| M3 — Tích hợp | Toàn bộ yêu cầu P1: Language ↔ TakeNote, Language → Habits, chấm phát âm, nhắc nhở, thuê bao | Contract test giữa các app đạt |
 | M4 — Nội dung và kiểm thử | Nội dung Language đủ phạm vi MVP; kiểm thử nội bộ trên iPad, điện thoại, máy tính | Đủ nội dung; không còn lỗi mất dữ liệu hoặc lỗi chặn |
 | Ra mắt | Mở công khai cả ba app và gói thuê bao chung | M1–M4 xong |
 
@@ -182,7 +182,6 @@ P2 làm sau ra mắt.
 
 ### Câu hỏi còn mở
 
-1. Người chưa trả phí được dùng Takenote đến đâu? Giới hạn dung lượng cho người có gói là bao nhiêu?
+1. Người chưa trả phí được dùng TakeNote đến đâu? Giới hạn dung lượng cho người có gói là bao nhiêu?
 2. Có cần nhận dạng chữ viết tay để tạo flashcard từ chữ viết tay không, và làm trước hay sau ra mắt?
 3. Sổ tay đã xóa giữ trong 30 ngày, có đồng ý không?
-4. Ghi ADR chốt "web" cho nền tảng client của Takenote, có đồng ý không?

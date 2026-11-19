@@ -20,7 +20,7 @@ Người học ngoại ngữ nghiêm túc bỏ cuộc vì hai lý do:
 1. **Bài học không liền mạch.** Các bài rời rạc. Kiến thức cũ không được dùng lại, nên người học quên và không thấy mình đang tiến lên.
 2. **Độ khó tăng quá nhanh.** Người học bị kẹt ở một mức và không lên được trình độ cao hơn.
 
-OLAA Language giải quyết hai vấn đề này bằng một lộ trình có ôn tập lồng ghép, độ khó tự điều chỉnh và bài kiểm tra cuối mỗi cấp độ.
+Olaa Language giải quyết hai vấn đề này bằng một lộ trình có ôn tập lồng ghép, độ khó tự điều chỉnh và bài kiểm tra cuối mỗi cấp độ.
 
 ## 2. Người dùng mục tiêu
 
@@ -66,8 +66,8 @@ Toàn bộ phạm vi này phải xong trước khi ra mắt (xem mục 8).
 - Độ khó tự điều chỉnh, bước học nhỏ, giải thích ngữ pháp bằng tiếng Việt, gợi ý khi làm bài.
 - Chấm phát âm chi tiết, bao gồm thanh điệu tiếng Trung.
 - Tiếng Trung: giản thể và phồn thể, pinyin, bài tập viết theo thứ tự nét.
-- Đăng nhập OLAA ID, đồng bộ tiến độ giữa các thiết bị.
-- Tích hợp OLAA Takenote và OLAA Habits.
+- Đăng nhập Olaa ID, đồng bộ tiến độ giữa các thiết bị.
+- Tích hợp Olaa TakeNote và Olaa Habits.
 - Thuê bao trả phí.
 
 ### Ngoài phạm vi MVP
@@ -85,7 +85,7 @@ Toàn bộ phạm vi này phải xong trước khi ra mắt (xem mục 8).
 | `docs/product/UX_PRINCIPLES.md` | Máy tính và iPad trước, điện thoại sau | Responsive cho cả ba loại thiết bị ngay từ MVP |
 | `docs/product/SCOPE.md` | Không nói về viết chữ Hán | Bổ sung bài tập viết theo thứ tự nét (mở rộng phạm vi, cần duyệt theo mục Change control) |
 | README, mục Status | Có cơ chế tim (hearts) | Bỏ cơ chế tim |
-| README, mục Status | Lưu tiến độ cục bộ, chưa đăng nhập | Đăng nhập OLAA ID và đồng bộ |
+| README, mục Status | Lưu tiến độ cục bộ, chưa đăng nhập | Đăng nhập Olaa ID và đồng bộ |
 
 ## 5. Yêu cầu chức năng
 
@@ -132,13 +132,13 @@ Mã yêu cầu theo dạng `REQ-01-NNN`, gắn với module con của nhánh 01.
 
 | Mã | Module | Yêu cầu | Ưu tiên | Acceptance criteria |
 |---|---|---|---|---|
-| REQ-01-040 | 01.01 learning-foundation | Đăng nhập OLAA ID | P1 | Học được trên thiết bị mới sau khi đăng nhập |
+| REQ-01-040 | 01.01 learning-foundation | Đăng nhập Olaa ID | P1 | Học được trên thiết bị mới sau khi đăng nhập |
 | REQ-01-041 | 01.12 learning-progress | Đồng bộ tiến độ giữa các thiết bị | P1 | Tiến độ trên thiết bị B khớp với thiết bị A sau khi đồng bộ; xử lý được xung đột khi học offline ngắn |
-| REQ-01-042 | 01.03 vocabulary | Lưu từ, điểm ngữ pháp hoặc ghi chú sang OLAA Takenote | P1 | Chỉ gửi qua contract hoặc domain event; Language không ghi trực tiếp vào dữ liệu của Takenote |
-| REQ-01-043 | 01.12 learning-progress | Báo hoàn thành mục tiêu ngày sang OLAA Habits | P1 | Phát domain event khi đạt mục tiêu ngày; Habits tự đánh dấu thói quen |
-| REQ-01-044 | — (nhánh 14) | Thuê bao theo tháng hoặc năm, là một gói Olaa chung cho Language, Takenote và Habits | P1 | Gói, giá và dùng thử do nhánh 14 quản lý; Language chỉ đọc quyền truy cập qua contract |
-| REQ-01-045 | 01.11 flashcards | Nhận yêu cầu tạo flashcard từ OLAA Takenote | P1 | Thẻ tạo từ Takenote vào chung lịch SRS và có liên kết quay về ghi chú nguồn |
-| REQ-01-046 | 01.02 curriculum | Nút "Ghi chú của bài này" mở danh sách ghi chú Takenote gắn với bài | P1 | Lấy danh sách qua `takenote.notes.list_by_source` |
+| REQ-01-042 | 01.03 vocabulary | Lưu từ, điểm ngữ pháp hoặc ghi chú sang Olaa TakeNote | P1 | Chỉ gửi qua contract hoặc domain event; Language không ghi trực tiếp vào dữ liệu của TakeNote |
+| REQ-01-043 | 01.12 learning-progress | Báo hoàn thành mục tiêu ngày sang Olaa Habits | P1 | Phát domain event khi đạt mục tiêu ngày; Habits tự đánh dấu thói quen |
+| REQ-01-044 | — (nhánh 14) | Thuê bao theo tháng hoặc năm, là một gói Olaa chung cho Language, TakeNote và Habits | P1 | Gói, giá và dùng thử do nhánh 14 quản lý; Language chỉ đọc quyền truy cập qua contract |
+| REQ-01-045 | 01.11 flashcards | Nhận yêu cầu tạo flashcard từ Olaa TakeNote | P1 | Thẻ tạo từ TakeNote vào chung lịch SRS và có liên kết quay về ghi chú nguồn |
+| REQ-01-046 | 01.02 curriculum | Nút "Ghi chú của bài này" mở danh sách ghi chú TakeNote gắn với bài | P1 | Lấy danh sách qua `takenote.notes.list_by_source` |
 
 ## 6. Yêu cầu phi chức năng
 
@@ -156,13 +156,13 @@ Mã yêu cầu theo dạng `REQ-01-NNN`, gắn với module con của nhánh 01.
 
 | Phụ thuộc | Nhánh | Dùng cho | Trạng thái nhánh (2026-11-18) | Ảnh hưởng |
 |---|---|---|---|---|
-| OLAA ID / Auth | 00, 05, 08 | REQ-01-040 | NOT STARTED; auth provider chưa chốt | Chặn đăng nhập |
+| Olaa ID / Auth | 00, 05, 08 | REQ-01-040 | NOT STARTED; auth provider chưa chốt | Chặn đăng nhập |
 | Backend đồng bộ | 05, 07 | REQ-01-041 | NOT STARTED | Chặn đồng bộ |
 | Content Management | 06 | NFR-01-002 | NOT STARTED | Chặn việc soạn nội dung ngoài code |
 | Thuê bao | 14 | REQ-01-044 | NOT STARTED | Chặn thu phí |
 | Analytics | 17 | NFR-01-004 | NOT STARTED | Chặn đo chỉ số |
-| OLAA Takenote | 03 | REQ-01-042 | NOT STARTED | Contract `PENDING` |
-| OLAA Habits | 02 | REQ-01-043 | NOT STARTED | Contract `PENDING` |
+| Olaa TakeNote | 03 | REQ-01-042 | NOT STARTED | Contract `PENDING` |
+| Olaa Habits | 02 | REQ-01-043 | NOT STARTED | Contract `PENDING` |
 | Contract và event | 20 | REQ-01-042, 043 | NOT STARTED | Contract `PENDING` |
 
 Contract tối thiểu đề xuất (chờ nhánh 20):
@@ -170,9 +170,9 @@ Contract tối thiểu đề xuất (chờ nhánh 20):
 - `language.daily_goal.completed` (event): `user_id`, `course_id`, `date`, `xp`, `minutes`.
 - `takenote.note.create_from_source` (command): `user_id`, `source_app = "language"`, `source_ref`, `title`, `body`, `tags`.
 - `billing.entitlement.get` (query): `user_id` → danh sách khóa học được truy cập, ngày hết hạn.
-- `language.flashcard.create_from_source` (command, Takenote → Language): xem PRD nhánh 03.
+- `language.flashcard.create_from_source` (command, TakeNote → Language): xem PRD nhánh 03.
 - `language.lesson.completed`, `language.speaking.attempted`, `language.flashcard.created` (event, Language → Habits): xem PRD nhánh 02.
-- `takenote.notes.list_by_source` (query, Language → Takenote): xem PRD nhánh 03.
+- `takenote.notes.list_by_source` (query, Language → TakeNote): xem PRD nhánh 03.
 
 ## 8. Lộ trình phát hành
 
@@ -182,9 +182,9 @@ Ba app ra mắt cùng lúc. Trước đó là các mốc xây dựng nội bộ,
 
 | Mốc | Nội dung | Điều kiện xong |
 |---|---|---|
-| M1 — Nền tảng chung | ADR nền tảng client và auth provider; OLAA ID, backend đồng bộ, event bus, kho lưu file, thuê bao, analytics ở `olaa-platform` | Một tài khoản đăng nhập được vào cả ba app; event đi được từ app này sang app khác |
+| M1 — Nền tảng chung | Firebase (ADR-0004): Olaa ID bằng Firebase Authentication, đồng bộ bằng Firestore, event qua `events/` và Cloud Functions, Cloud Storage, Google Analytics; thuê bao qua cổng thanh toán Việt Nam (ADR-0005) | Một tài khoản đăng nhập được vào cả ba app; event đi được từ app này sang app khác |
 | M2 — Lõi từng app | Toàn bộ yêu cầu P0 của ba app | Đạt acceptance criteria của mọi P0 |
-| M3 — Tích hợp | Toàn bộ yêu cầu P1: Language ↔ Takenote, Language → Habits, chấm phát âm, nhắc nhở, thuê bao | Contract test giữa các app đạt |
+| M3 — Tích hợp | Toàn bộ yêu cầu P1: Language ↔ TakeNote, Language → Habits, chấm phát âm, nhắc nhở, thuê bao | Contract test giữa các app đạt |
 | M4 — Nội dung và kiểm thử | Nội dung Language đủ phạm vi MVP; kiểm thử nội bộ trên iPad, điện thoại, máy tính | Đủ nội dung; không còn lỗi mất dữ liệu hoặc lỗi chặn |
 | Ra mắt | Mở công khai cả ba app và gói thuê bao chung | M1–M4 xong |
 
@@ -218,7 +218,7 @@ Mốc dài nhất của Language là M4. Phạm vi nội dung MVP là Anh A0–C
 ### Câu hỏi còn mở
 
 1. Ở câu 7 chủ dự án chọn "tự biên soạn + mua bản quyền", nhưng ở câu 14 lại nói nội dung lấy từ nguồn mở. PRD này ghi nội dung dùng nguồn mở trước, mua bản quyền khi cần. Có đúng không?
-2. Có dùng thử miễn phí không, và giá bao nhiêu? Đã chốt là gói Olaa chung cho cả hệ sinh thái (phỏng vấn Takenote, câu 6).
+2. Có dùng thử miễn phí không, và giá bao nhiêu? Đã chốt là gói Olaa chung cho cả hệ sinh thái (phỏng vấn TakeNote, câu 6).
 3. Có xác nhận gỡ khóa "tiếng Việt cho người nói tiếng Anh" hiện có không?
 4. Có duyệt ngưỡng đạt kiểm tra cấp độ 70% và giới hạn 7 từ mới mỗi bài không?
 5. Chọn nhà cung cấp chấm phát âm nào? Cần ADR.

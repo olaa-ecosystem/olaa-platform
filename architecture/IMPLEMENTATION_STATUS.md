@@ -48,7 +48,8 @@ Không đánh dấu IMPLEMENTED khi mới có thư mục hoặc file khung.
 
 | Quyết định | Ảnh hưởng nhánh | Trạng thái |
 |---|---|---|
-| Nền tảng client chính (web, native iPad/iOS, cross-platform) | 00, 01, 02, 03, 04 | Chưa chốt |
-| Framework frontend/backend và công cụ build | 00, 04, 05, 09 | Chưa chốt |
+| Nền tảng client chính (web, native iPad/iOS, cross-platform) | 00, 01, 02, 03, 04 | Đã chốt: web responsive ([ADR-0003](DECISIONS/ADR-0003-web-client-platform.md)) |
+| Framework frontend/backend và công cụ build | 00, 04, 05, 09 | Đã chốt: React + Vite + TypeScript ([ADR-0003](DECISIONS/ADR-0003-web-client-platform.md)); Firebase và Cloud Functions ([ADR-0004](DECISIONS/ADR-0004-firebase-backend.md)) |
 | Cách phát hành shared packages cho repository app | 04, 13, 20 | Chưa chốt |
-| Auth provider | 00, 05, 08, 16 | Chưa chốt |
+| Auth provider | 00, 05, 08, 16 | Đã chốt: Firebase Authentication ([ADR-0004](DECISIONS/ADR-0004-firebase-backend.md)) |
+| Cổng thanh toán cụ thể | 05, 14 | Chưa chốt; đã chọn nhóm cổng Việt Nam ([ADR-0005](DECISIONS/ADR-0005-vietnam-payment-gateway.md)) |

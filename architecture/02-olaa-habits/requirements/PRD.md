@@ -17,11 +17,11 @@ Các con số mục tiêu và các mục ghi "đề xuất" là đề xuất c�
 
 Học sinh, sinh viên đặt mục tiêu học nhưng thường bỏ sau 1–2 tuần. Lý do là app thói quen không biết họ thật sự đã học hay chưa. Họ phải tự đánh dấu bằng tay, vừa phiền vừa dễ đánh dấu cho có.
 
-OLAA Habits giải quyết vấn đề này bằng cách **tự động ghi nhận thói quen học tập từ hoạt động thật trong OLAA Language và OLAA Takenote**, kèm các cơ chế giữ người dùng qua giai đoạn dễ bỏ cuộc.
+Olaa Habits giải quyết vấn đề này bằng cách **tự động ghi nhận thói quen học tập từ hoạt động thật trong Olaa Language và Olaa TakeNote**, kèm các cơ chế giữ người dùng qua giai đoạn dễ bỏ cuộc.
 
 ## 2. Người dùng mục tiêu
 
-- **Ai:** học sinh, sinh viên 15–25 tuổi, cùng tập người dùng với Language và Takenote.
+- **Ai:** học sinh, sinh viên 15–25 tuổi, cùng tập người dùng với Language và TakeNote.
 - **Thiết bị:** web responsive trên điện thoại, iPad, máy tính.
 - **Ngôn ngữ giao diện:** tiếng Việt.
 
@@ -42,17 +42,17 @@ OLAA Habits giải quyết vấn đề này bằng cách **tự động ghi nh�
 - Chuỗi (streak) và đóng băng chuỗi.
 - Nhắc nhở thông minh.
 - Phần thưởng và huy hiệu.
-- Đăng nhập OLAA ID, đồng bộ, gói thuê bao Olaa chung.
+- Đăng nhập Olaa ID, đồng bộ, gói thuê bao Olaa chung.
 
 ### Để sau MVP
 
 - Ngày nghỉ tự động, tự hạ mục tiêu, tính theo tuần (các phương án không chọn ở câu 4).
 - Routine nhiều bước (module 02.06), mục tiêu dài hạn và cột mốc (02.05), phân tích nâng cao (02.11).
-- Tín hiệu tự động từ thời gian sửa ghi chú trong Takenote.
+- Tín hiệu tự động từ thời gian sửa ghi chú trong TakeNote.
 
 ### Ngoài phạm vi
 
-- Soạn nội dung bài học, sổ ghi chú, canvas viết tay, PDF (thuộc Language và Takenote).
+- Soạn nội dung bài học, sổ ghi chú, canvas viết tay, PDF (thuộc Language và TakeNote).
 
 ## 5. Yêu cầu chức năng
 
@@ -74,7 +74,7 @@ OLAA Habits giải quyết vấn đề này bằng cách **tự động ghi nh�
 | REQ-02-010 | 02.03 habit-tracking | Đạt mục tiêu ngày trong Language thì thói quen hoàn thành | P1 | Ghi nhận trong ≤ 1 phút sau khi nhận event |
 | REQ-02-011 | 02.03 habit-tracking | Hoàn thành ≥ N bài mới trong ngày | P1 | Chỉ tính bài mới, không tính bài làm lại |
 | REQ-02-012 | 02.03 habit-tracking | Luyện nói ≥ N câu trong ngày | P1 | Dựa trên event chấm phát âm của Language |
-| REQ-02-013 | 02.03 habit-tracking | Tạo ≥ N flashcard từ ghi chú Takenote | P1 | Dựa trên event Language phát khi tạo thẻ có nguồn Takenote |
+| REQ-02-013 | 02.03 habit-tracking | Tạo ≥ N flashcard từ ghi chú TakeNote | P1 | Dựa trên event Language phát khi tạo thẻ có nguồn TakeNote |
 | REQ-02-014 | 02.03 habit-tracking | Thói quen tự động không cho đánh dấu tay | P1 | Nút đánh dấu bị ẩn; có liên kết "Học ngay" mở Language |
 | REQ-02-015 | 02.03 habit-tracking | Event đến trễ hoặc trùng vẫn tính đúng ngày, không tính hai lần | P1 | Dùng `event_id` để chống trùng; tính theo ngày ở múi giờ của người dùng |
 
@@ -93,7 +93,7 @@ OLAA Habits giải quyết vấn đề này bằng cách **tự động ghi nh�
 
 | Mã | Module | Yêu cầu | Ưu tiên | Acceptance criteria |
 |---|---|---|---|---|
-| REQ-02-030 | — (nhánh 00/05) | Đăng nhập OLAA ID, dùng chung với Language và Takenote | P1 | Event từ Language gắn đúng người dùng |
+| REQ-02-030 | — (nhánh 00/05) | Đăng nhập Olaa ID, dùng chung với Language và TakeNote | P1 | Event từ Language gắn đúng người dùng |
 | REQ-02-031 | 02.03 habit-tracking | Đồng bộ thói quen và lịch sử giữa các thiết bị | P1 | Đổi thiết bị vẫn thấy đủ thói quen và lịch sử |
 | REQ-02-032 | — (nhánh 14) | Nằm trong gói thuê bao Olaa chung | P1 | Đọc quyền truy cập qua `billing.entitlement.get` |
 
@@ -111,12 +111,12 @@ OLAA Habits giải quyết vấn đề này bằng cách **tự động ghi nh�
 
 | Phụ thuộc | Nhánh | Dùng cho | Trạng thái nhánh (2026-11-18) |
 |---|---|---|---|
-| OLAA ID / Auth | 00, 05, 08 | REQ-02-030 | NOT STARTED; auth provider chưa chốt |
+| Olaa ID / Auth | 00, 05, 08 | REQ-02-030 | NOT STARTED; auth provider chưa chốt |
 | Backend đồng bộ và event bus | 05, 07 | REQ-02-010 đến 015, REQ-02-031 | NOT STARTED |
 | Thông báo đẩy và email | 05 | REQ-02-022, 023 | NOT STARTED |
 | Thuê bao | 14 | REQ-02-032 | NOT STARTED |
 | Analytics | 17 | Mục 3 | NOT STARTED |
-| OLAA Language | 01 | REQ-02-010 đến 013 | Event `PENDING` |
+| Olaa Language | 01 | REQ-02-010 đến 013 | Event `PENDING` |
 | Contract và event | 20 | REQ-02-010 đến 013 | NOT STARTED |
 
 Event tối thiểu Habits tiêu thụ (chờ nhánh 20). Mọi event có `event_id`, `user_id`, `occurred_at`, `timezone`:
@@ -134,9 +134,9 @@ Ba app ra mắt cùng lúc. Trước đó là các mốc xây dựng nội bộ,
 
 | Mốc | Nội dung | Điều kiện xong |
 |---|---|---|
-| M1 — Nền tảng chung | ADR nền tảng client và auth provider; OLAA ID, backend đồng bộ, event bus, kho lưu file, thuê bao, analytics ở `olaa-platform` | Một tài khoản đăng nhập được vào cả ba app; event đi được từ app này sang app khác |
+| M1 — Nền tảng chung | Firebase (ADR-0004): Olaa ID bằng Firebase Authentication, đồng bộ bằng Firestore, event qua `events/` và Cloud Functions, Cloud Storage, Google Analytics; thuê bao qua cổng thanh toán Việt Nam (ADR-0005) | Một tài khoản đăng nhập được vào cả ba app; event đi được từ app này sang app khác |
 | M2 — Lõi từng app | Toàn bộ yêu cầu P0 của ba app | Đạt acceptance criteria của mọi P0 |
-| M3 — Tích hợp | Toàn bộ yêu cầu P1: Language ↔ Takenote, Language → Habits, chấm phát âm, nhắc nhở, thuê bao | Contract test giữa các app đạt |
+| M3 — Tích hợp | Toàn bộ yêu cầu P1: Language ↔ TakeNote, Language → Habits, chấm phát âm, nhắc nhở, thuê bao | Contract test giữa các app đạt |
 | M4 — Nội dung và kiểm thử | Nội dung Language đủ phạm vi MVP; kiểm thử nội bộ trên iPad, điện thoại, máy tính | Đủ nội dung; không còn lỗi mất dữ liệu hoặc lỗi chặn |
 | Ra mắt | Mở công khai cả ba app và gói thuê bao chung | M1–M4 xong |
 
