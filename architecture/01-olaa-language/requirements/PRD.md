@@ -47,7 +47,7 @@ OLAA Language giải quyết hai vấn đề này bằng một lộ trình có �
 | Việt → Trung | HSK 1 → HSK 3 (HSK 3.0) |
 | Việt → Tây Ban Nha | A0 → B1 |
 
-Xem mục 8: đề xuất chia phạm vi này thành nhiều đợt phát hành.
+Toàn bộ phạm vi này phải xong trước khi ra mắt (xem mục 8).
 
 ### Chỉ số thành công
 
@@ -89,7 +89,7 @@ Xem mục 8: đề xuất chia phạm vi này thành nhiều đợt phát hành.
 
 ## 5. Yêu cầu chức năng
 
-Mã yêu cầu theo dạng `REQ-01-NNN`, gắn với module con của nhánh 01. Ưu tiên: P0 bắt buộc cho lần ra mắt đầu, P1 cần cho MVP đầy đủ, P2 làm sau.
+Mã yêu cầu theo dạng `REQ-01-NNN`, gắn với module con của nhánh 01. Ưu tiên: P0 là lõi, làm trước (M2); P1 cũng bắt buộc trước khi ra mắt (M3); P2 làm sau ra mắt.
 
 ### 5.1 Lộ trình liền mạch
 
@@ -176,16 +176,21 @@ Contract tối thiểu đề xuất (chờ nhánh 20):
 
 ## 8. Lộ trình phát hành
 
-Ràng buộc thực tế: còn khoảng 6 tuần đến 12/2026, một người làm cả nội dung lẫn kỹ thuật, và mọi nhánh nền tảng ở `olaa-platform` đều chưa bắt đầu. Phạm vi MVP ở mục 3 không thể xong trong khoảng thời gian này. **Đề xuất (chờ duyệt):**
+**Quyết định của chủ dự án (2026-11-19):** chỉ ra mắt khi các tính năng đã đầy đủ. Không có bản beta công khai thiếu tính năng. Mốc 12/2026 không còn áp dụng; ngày ra mắt chưa chốt.
 
-| Đợt | Thời điểm | Nội dung |
+Ba app ra mắt cùng lúc. Trước đó là các mốc xây dựng nội bộ, không công khai:
+
+| Mốc | Nội dung | Điều kiện xong |
 |---|---|---|
-| R1 — Beta công khai | 12/2026 | 3 khóa, mỗi khóa phần đầu của cấp thấp nhất (Anh A1, Tây Ban Nha A1, Trung HSK 1). Toàn bộ P0: ôn lồng ghép, chỉnh độ khó, kiểm tra cấp độ, giải thích tiếng Việt, gợi ý, bỏ tim, giản thể/phồn thể, pinyin, viết theo nét. Miễn phí, lưu tiến độ cục bộ như hiện nay |
-| R2 | Q1/2027 | OLAA ID, đồng bộ, thuê bao, analytics. Hoàn thành A1 / HSK 1 cho cả 3 khóa |
-| R3 | Q2/2027 | Chấm phát âm, tích hợp Takenote và Habits, A2 / HSK 2 |
-| R4 trở đi | Từ Q3/2027 | Mở rộng nội dung: Anh đến C1, Tây Ban Nha đến B1, Trung đến HSK 3 |
+| M1 — Nền tảng chung | ADR nền tảng client và auth provider; OLAA ID, backend đồng bộ, event bus, kho lưu file, thuê bao, analytics ở `olaa-platform` | Một tài khoản đăng nhập được vào cả ba app; event đi được từ app này sang app khác |
+| M2 — Lõi từng app | Toàn bộ yêu cầu P0 của ba app | Đạt acceptance criteria của mọi P0 |
+| M3 — Tích hợp | Toàn bộ yêu cầu P1: Language ↔ Takenote, Language → Habits, chấm phát âm, nhắc nhở, thuê bao | Contract test giữa các app đạt |
+| M4 — Nội dung và kiểm thử | Nội dung Language đủ phạm vi MVP; kiểm thử nội bộ trên iPad, điện thoại, máy tính | Đủ nội dung; không còn lỗi mất dữ liệu hoặc lỗi chặn |
+| Ra mắt | Mở công khai cả ba app và gói thuê bao chung | M1–M4 xong |
 
-Lý do chọn R1 như trên: R1 kiểm chứng đúng hai vấn đề ở mục 1 (liền mạch và độ khó) với ít phụ thuộc nhất. Đăng nhập, thu phí và chấm phát âm đều cần backend chưa có.
+P2 làm sau ra mắt.
+
+Mốc dài nhất của Language là M4. Phạm vi nội dung MVP là Anh A0–C1, Tây Ban Nha A0–B1, Trung HSK 1–3, và mọi nội dung tiếng Trung có cả giản thể lẫn phồn thể. Với một người làm, phần nội dung sẽ quyết định ngày ra mắt nhiều hơn phần code. Đề xuất: đo tốc độ soạn nội dung thực tế sau 2 tuần đầu của M4, rồi ước tính ngày ra mắt.
 
 ## 9. Rủi ro và câu hỏi còn mở
 
@@ -193,11 +198,11 @@ Lý do chọn R1 như trên: R1 kiểm chứng đúng hai vấn đề ở mục 
 
 | Rủi ro | Mức | Giảm thiểu |
 |---|---|---|
-| Khối lượng nội dung quá lớn cho một người: riêng A0–C1 tiếng Anh đã là cả một chương trình | Cao | Chia đợt như mục 8; ưu tiên tái sử dụng dữ liệu mở có cấu trúc |
+| Khối lượng nội dung quá lớn cho một người: riêng A0–C1 tiếng Anh đã là cả một chương trình. Vì chỉ ra mắt khi đủ, ngày ra mắt có thể lùi xa | Cao | Đo tốc độ soạn thực tế ở đầu M4 để ước tính ngày ra mắt; ưu tiên tái sử dụng dữ liệu mở có cấu trúc |
 | Giấy phép nguồn mở: nhiều nguồn là CC BY-NC (cấm dùng thương mại), không dùng được với gói thuê bao | Cao | Ghi nguồn và giấy phép cho từng mục nội dung; loại bỏ nguồn NC/ND |
 | Hai dạng chữ Hán làm gấp đôi việc duyệt nội dung tiếng Trung | Trung bình | Soạn ở giản thể, chuyển tự động sang phồn thể (ví dụ dùng OpenCC), rồi duyệt lại các chỗ chuyển không chắc chắn |
 | Chi phí chấm phát âm tính theo lượt, làm giảm biên lợi nhuận của gói thuê bao | Trung bình | Chọn nhà cung cấp qua ADR, có ước tính chi phí cho mỗi người dùng mỗi tháng |
-| Toàn bộ nhánh nền tảng đều NOT STARTED | Cao | R1 không phụ thuộc nền tảng |
+| Toàn bộ nhánh nền tảng đều NOT STARTED | Cao | Làm M1 trước; chốt ADR nền tảng và auth provider ngay đầu M1 |
 | Không có người duyệt chuyên môn cho từng ngôn ngữ | Trung bình | Đối chiếu với danh sách từ chuẩn (CEFR, HSK 3.0) và nguồn có kiểm duyệt |
 
 ### Nguồn mở ứng viên (cần xác minh giấy phép trước khi dùng)
@@ -212,9 +217,8 @@ Lý do chọn R1 như trên: R1 kiểm chứng đúng hai vấn đề ở mục 
 
 ### Câu hỏi còn mở
 
-1. Duyệt lộ trình phát hành ở mục 8, hay giữ toàn bộ MVP vào 12/2026?
-2. Ở câu 7 chủ dự án chọn "tự biên soạn + mua bản quyền", nhưng ở câu 14 lại nói nội dung lấy từ nguồn mở. PRD này ghi R1 dùng nguồn mở và việc mua bản quyền để sau. Có đúng không?
-3. Có dùng thử miễn phí không, và giá bao nhiêu? Đã chốt là gói Olaa chung cho cả hệ sinh thái (phỏng vấn Takenote, câu 6).
-4. Có xác nhận gỡ khóa "tiếng Việt cho người nói tiếng Anh" hiện có không?
-5. Có duyệt ngưỡng đạt kiểm tra cấp độ 70% và giới hạn 7 từ mới mỗi bài không?
-6. Chọn nhà cung cấp chấm phát âm nào? Cần ADR.
+1. Ở câu 7 chủ dự án chọn "tự biên soạn + mua bản quyền", nhưng ở câu 14 lại nói nội dung lấy từ nguồn mở. PRD này ghi nội dung dùng nguồn mở trước, mua bản quyền khi cần. Có đúng không?
+2. Có dùng thử miễn phí không, và giá bao nhiêu? Đã chốt là gói Olaa chung cho cả hệ sinh thái (phỏng vấn Takenote, câu 6).
+3. Có xác nhận gỡ khóa "tiếng Việt cho người nói tiếng Anh" hiện có không?
+4. Có duyệt ngưỡng đạt kiểm tra cấp độ 70% và giới hạn 7 từ mới mỗi bài không?
+5. Chọn nhà cung cấp chấm phát âm nào? Cần ADR.

@@ -5,6 +5,7 @@
 ## Unreleased
 
 ### 2026-11-19
+- PRD: bỏ phát hành theo đợt R1–R4; chỉ ra mắt khi đủ tính năng, theo các mốc nội bộ M1–M4 (quyết định chủ dự án).
 - Thêm bản nháp PRD (`requirements/PRD.md`) từ phỏng vấn chủ dự án. Trạng thái DRAFT, chưa có yêu cầu được phê duyệt.
 
 ### 2026-11-18

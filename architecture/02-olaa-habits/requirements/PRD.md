@@ -30,7 +30,7 @@ OLAA Habits giải quyết vấn đề này bằng cách **tự động ghi nh�
 | Chỉ số | Định nghĩa | Mục tiêu (đề xuất) |
 |---|---|---|
 | Giữ chân sau tuần 2 | % người dùng mới còn hoạt động trong khoảng ngày 14–21 | Cao hơn ít nhất 10 điểm phần trăm so với người dùng Language không dùng Habits |
-| Tỷ lệ ghi nhận tự động | % lượt hoàn thành thói quen học tập được ghi tự động | ≥ 80% (đo từ R2) |
+| Tỷ lệ ghi nhận tự động | % lượt hoàn thành thói quen học tập được ghi tự động | ≥ 80% |
 
 ## 4. Phạm vi
 
@@ -56,7 +56,7 @@ OLAA Habits giải quyết vấn đề này bằng cách **tự động ghi nh�
 
 ## 5. Yêu cầu chức năng
 
-Ưu tiên: P0 bắt buộc cho lần ra mắt đầu, P1 cần cho MVP đầy đủ, P2 làm sau.
+Ưu tiên: P0 là lõi, làm trước (M2); P1 cũng bắt buộc trước khi ra mắt (M3); P2 làm sau ra mắt.
 
 ### 5.1 Thói quen
 
@@ -73,8 +73,8 @@ OLAA Habits giải quyết vấn đề này bằng cách **tự động ghi nh�
 |---|---|---|---|---|
 | REQ-02-010 | 02.03 habit-tracking | Đạt mục tiêu ngày trong Language thì thói quen hoàn thành | P1 | Ghi nhận trong ≤ 1 phút sau khi nhận event |
 | REQ-02-011 | 02.03 habit-tracking | Hoàn thành ≥ N bài mới trong ngày | P1 | Chỉ tính bài mới, không tính bài làm lại |
-| REQ-02-012 | 02.03 habit-tracking | Luyện nói ≥ N câu trong ngày | P2 | Có từ khi Language có chấm phát âm (R3) |
-| REQ-02-013 | 02.03 habit-tracking | Tạo ≥ N flashcard từ ghi chú Takenote | P2 | Dựa trên event Language phát khi tạo thẻ có nguồn Takenote |
+| REQ-02-012 | 02.03 habit-tracking | Luyện nói ≥ N câu trong ngày | P1 | Dựa trên event chấm phát âm của Language |
+| REQ-02-013 | 02.03 habit-tracking | Tạo ≥ N flashcard từ ghi chú Takenote | P1 | Dựa trên event Language phát khi tạo thẻ có nguồn Takenote |
 | REQ-02-014 | 02.03 habit-tracking | Thói quen tự động không cho đánh dấu tay | P1 | Nút đánh dấu bị ẩn; có liên kết "Học ngay" mở Language |
 | REQ-02-015 | 02.03 habit-tracking | Event đến trễ hoặc trùng vẫn tính đúng ngày, không tính hai lần | P1 | Dùng `event_id` để chống trùng; tính theo ngày ở múi giờ của người dùng |
 
@@ -85,7 +85,7 @@ OLAA Habits giải quyết vấn đề này bằng cách **tự động ghi nh�
 | REQ-02-020 | 02.04 streaks | Chuỗi hiện tại và chuỗi dài nhất cho từng thói quen | P0 | Với lịch "N lần mỗi tuần", chuỗi tính theo tuần |
 | REQ-02-021 | 02.04 streaks | Đóng băng chuỗi: báo trước ngày bận, chuỗi giữ nguyên | P0 | Đề xuất 2 lượt mỗi tháng; chỉ đặt được cho hôm nay hoặc các ngày sau; ngày đóng băng hiện khác màu trên lịch |
 | REQ-02-022 | 02.08 reminders | Nhắc nhở vào giờ người dùng chọn | P1 | Không gửi nếu thói quen hôm đó đã hoàn thành |
-| REQ-02-023 | 02.08 reminders | Nhắc nhở thông minh: gợi ý giờ nhắc theo giờ người dùng hay học | P2 | Cần ít nhất 7 ngày dữ liệu |
+| REQ-02-023 | 02.08 reminders | Nhắc nhở thông minh: gợi ý giờ nhắc theo giờ người dùng hay học | P1 | Cần ít nhất 7 ngày dữ liệu |
 | REQ-02-024 | 02.10 gamification | Huy hiệu cho các mốc: chuỗi 7, 30, 100 ngày; lần đầu đóng băng thành công; tuần hoàn thành đủ | P0 | Huy hiệu không mất khi chuỗi bị đứt |
 | REQ-02-025 | 02.07 calendar | Lịch tháng hiển thị ngày hoàn thành, ngày lỡ, ngày đóng băng | P0 | Xem được từng thói quen hoặc tất cả |
 
@@ -94,7 +94,7 @@ OLAA Habits giải quyết vấn đề này bằng cách **tự động ghi nh�
 | Mã | Module | Yêu cầu | Ưu tiên | Acceptance criteria |
 |---|---|---|---|---|
 | REQ-02-030 | — (nhánh 00/05) | Đăng nhập OLAA ID, dùng chung với Language và Takenote | P1 | Event từ Language gắn đúng người dùng |
-| REQ-02-031 | 02.03 habit-tracking | Đồng bộ thói quen và lịch sử giữa các thiết bị | P1 | Dữ liệu R1 lưu trên thiết bị được đưa lên tài khoản khi đăng nhập lần đầu |
+| REQ-02-031 | 02.03 habit-tracking | Đồng bộ thói quen và lịch sử giữa các thiết bị | P1 | Đổi thiết bị vẫn thấy đủ thói quen và lịch sử |
 | REQ-02-032 | — (nhánh 14) | Nằm trong gói thuê bao Olaa chung | P1 | Đọc quyền truy cập qua `billing.entitlement.get` |
 
 ## 6. Yêu cầu phi chức năng
@@ -128,15 +128,19 @@ Event tối thiểu Habits tiêu thụ (chờ nhánh 20). Mọi event có `event
 
 ## 8. Lộ trình phát hành
 
-Chủ dự án chọn ra mắt Habits vào 12/2026 cùng Language và Takenote, với thói quen đánh dấu tay trước, phần tự động thêm từ R2. **Lộ trình (đề xuất, chờ duyệt):**
+**Quyết định của chủ dự án (2026-11-19):** chỉ ra mắt khi các tính năng đã đầy đủ. Không có bản beta công khai thiếu tính năng. Mốc 12/2026 không còn áp dụng; ngày ra mắt chưa chốt.
 
-| Đợt | Thời điểm | Nội dung |
+Ba app ra mắt cùng lúc. Trước đó là các mốc xây dựng nội bộ, không công khai:
+
+| Mốc | Nội dung | Điều kiện xong |
 |---|---|---|
-| R1 — Beta công khai | 12/2026 | Thói quen tự do đánh dấu tay, lịch lặp, chuỗi, đóng băng chuỗi, huy hiệu, lịch tháng. Lưu trên thiết bị, có nút sao lưu ra file. Miễn phí. Chưa có nhắc nhở: web không đặt được thông báo theo giờ mà không có server |
-| R2 | Q1/2027 | OLAA ID, đồng bộ, gói thuê bao chung, tự động ghi nhận từ Language (đạt mục tiêu ngày, N bài mới), nhắc nhở theo giờ chọn (PWA push và email) |
-| R3 | Q2/2027 | Tín hiệu luyện nói và flashcard từ Takenote; nhắc nhở thông minh |
+| M1 — Nền tảng chung | ADR nền tảng client và auth provider; OLAA ID, backend đồng bộ, event bus, kho lưu file, thuê bao, analytics ở `olaa-platform` | Một tài khoản đăng nhập được vào cả ba app; event đi được từ app này sang app khác |
+| M2 — Lõi từng app | Toàn bộ yêu cầu P0 của ba app | Đạt acceptance criteria của mọi P0 |
+| M3 — Tích hợp | Toàn bộ yêu cầu P1: Language ↔ Takenote, Language → Habits, chấm phát âm, nhắc nhở, thuê bao | Contract test giữa các app đạt |
+| M4 — Nội dung và kiểm thử | Nội dung Language đủ phạm vi MVP; kiểm thử nội bộ trên iPad, điện thoại, máy tính | Đủ nội dung; không còn lỗi mất dữ liệu hoặc lỗi chặn |
+| Ra mắt | Mở công khai cả ba app và gói thuê bao chung | M1–M4 xong |
 
-R1 chưa có điểm khác biệt chính (tự động ghi nhận), nên chưa đo được chỉ số "tỷ lệ ghi nhận tự động". Mục tiêu của R1 là có sẵn người dùng và dữ liệu nền cho chỉ số giữ chân trước khi R2 ra mắt.
+P2 làm sau ra mắt.
 
 ## 9. Rủi ro và câu hỏi còn mở
 
@@ -144,15 +148,12 @@ R1 chưa có điểm khác biệt chính (tự động ghi nhận), nên chưa �
 
 | Rủi ro | Mức | Giảm thiểu |
 |---|---|---|
-| R1 chỉ là app thói quen đánh dấu tay, đúng loại app mà người dùng đang bỏ | Cao | Giới thiệu rõ R1 là beta; ra R2 sớm; ưu tiên mẫu thói quen học tập |
-| Một người làm ba app trong 6 tuần | Cao | Habits R1 là app nhỏ nhất, làm sau cùng; dùng chung design system và cách lưu trữ với Language |
+| Một người làm ba app và nền tảng chung | Cao | Habits là app nhỏ nhất, làm sau cùng trong M2; dùng chung design system với Language |
 | Thông báo đẩy trên iOS cần "Thêm vào màn hình chính", nhiều người không làm | Trung bình | Hướng dẫn trong app; email dự phòng |
 | Event trễ hoặc mất làm chuỗi đứt sai, gây mất niềm tin | Trung bình | Event idempotent; cho phép tính lại chuỗi khi event đến trễ trong 48 giờ |
-| Dữ liệu R1 trên thiết bị có thể mất (Safari xóa dữ liệu web lâu không dùng) | Trung bình | Sao lưu ra file; chuyển lên tài khoản ở R2 |
 
 ### Câu hỏi còn mở
 
-1. Duyệt lộ trình ở mục 8, đặc biệt là R1 chưa có nhắc nhở?
-2. Mỗi tháng được bao nhiêu lượt đóng băng chuỗi? Đề xuất 2.
-3. Chuỗi của Habits và day streak đang có trong Language là một hay hai? Đề xuất: Language giữ streak học của mình; Habits hiển thị chuỗi theo từng thói quen. Không gộp, để tránh hai app ghi đè dữ liệu của nhau.
-4. Người chưa trả phí dùng Habits đến đâu?
+1. Mỗi tháng được bao nhiêu lượt đóng băng chuỗi? Đề xuất 2.
+2. Chuỗi của Habits và day streak đang có trong Language là một hay hai? Đề xuất: Language giữ streak học của mình; Habits hiển thị chuỗi theo từng thói quen. Không gộp, để tránh hai app ghi đè dữ liệu của nhau.
+3. Người chưa trả phí dùng Habits đến đâu?

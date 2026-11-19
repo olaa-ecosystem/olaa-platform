@@ -73,7 +73,7 @@ OLAA Takenote giải quyết hai vấn đề này bằng hai cách: cho gõ và 
 
 ## 5. Yêu cầu chức năng
 
-Ưu tiên: P0 bắt buộc cho lần ra mắt đầu, P1 cần cho MVP đầy đủ, P2 làm sau.
+Ưu tiên: P0 là lõi, làm trước (M2); P1 cũng bắt buộc trước khi ra mắt (M3); P2 làm sau ra mắt.
 
 ### 5.1 Sổ tay và trang
 
@@ -154,16 +154,19 @@ Quyết định cần ADR: nền tảng client của Takenote là web (đang n�
 
 ## 8. Lộ trình phát hành
 
-Ràng buộc thực tế: còn khoảng 6 tuần đến 12/2026; một người làm cùng lúc cả Language và Takenote; Takenote chưa có mã tính năng nào; mọi nhánh nền tảng đều NOT STARTED. **Đề xuất (chờ duyệt):**
+**Quyết định của chủ dự án (2026-11-19):** chỉ ra mắt khi các tính năng đã đầy đủ. Không có bản beta công khai thiếu tính năng. Mốc 12/2026 không còn áp dụng; ngày ra mắt chưa chốt.
 
-| Đợt | Thời điểm | Nội dung |
+Ba app ra mắt cùng lúc. Trước đó là các mốc xây dựng nội bộ, không công khai:
+
+| Mốc | Nội dung | Điều kiện xong |
 |---|---|---|
-| R1 — Beta công khai | 12/2026 | Toàn bộ P0: sổ tay và trang, gõ và viết tay trên một trang, nhập PDF, ảnh và file, xuất PDF, tự lưu, undo/redo. Lưu trên thiết bị, kèm nút sao lưu và khôi phục bằng file để giảm rủi ro mất dữ liệu. Miễn phí |
-| R2 | Q1/2027 | OLAA ID, đồng bộ cloud, kho lưu file, gói thuê bao chung |
-| R3 | Q2/2027 | Nối hai chiều với Language (REQ-03-030 đến 032) |
-| R4 trở đi | Từ Q3/2027 | Tìm kiếm, nhận dạng chữ viết tay, thẻ và liên kết, lịch sử phiên bản |
+| M1 — Nền tảng chung | ADR nền tảng client và auth provider; OLAA ID, backend đồng bộ, event bus, kho lưu file, thuê bao, analytics ở `olaa-platform` | Một tài khoản đăng nhập được vào cả ba app; event đi được từ app này sang app khác |
+| M2 — Lõi từng app | Toàn bộ yêu cầu P0 của ba app | Đạt acceptance criteria của mọi P0 |
+| M3 — Tích hợp | Toàn bộ yêu cầu P1: Language ↔ Takenote, Language → Habits, chấm phát âm, nhắc nhở, thuê bao | Contract test giữa các app đạt |
+| M4 — Nội dung và kiểm thử | Nội dung Language đủ phạm vi MVP; kiểm thử nội bộ trên iPad, điện thoại, máy tính | Đủ nội dung; không còn lỗi mất dữ liệu hoặc lỗi chặn |
+| Ra mắt | Mở công khai cả ba app và gói thuê bao chung | M1–M4 xong |
 
-Lý do: R1 kiểm chứng vấn đề 1 ("phải dùng hai app") mà không cần backend. Vấn đề 2 ("nối với việc học") cần tài khoản chung giữa hai app. Hai app chạy trên hai tên miền khác nhau, nên khi chưa có backend thì không thể chia sẻ dữ liệu cục bộ.
+P2 làm sau ra mắt.
 
 ## 9. Rủi ro và câu hỏi còn mở
 
@@ -172,15 +175,14 @@ Lý do: R1 kiểm chứng vấn đề 1 ("phải dùng hai app") mà không cầ
 | Rủi ro | Mức | Giảm thiểu |
 |---|---|---|
 | Viết tay trên Safari kém mượt hơn GoodNotes và Notability | Cao | Thử nghiệm sớm trên iPad thật trong tuần đầu; nếu không đạt NFR-03-001 thì xem lại quyết định nền tảng |
-| Safari có thể xóa dữ liệu của trang web không được dùng một thời gian, nên R1 lưu cục bộ có thể mất ghi chú | Cao | Xin lưu trữ bền vững; hướng dẫn "Thêm vào màn hình chính"; có nút sao lưu ra file; đưa đồng bộ cloud vào R2 |
-| Một người làm hai app trong 6 tuần | Cao | Chia đợt như mục 8; dùng thư viện có sẵn cho PDF |
+| Safari có thể xóa dữ liệu web lâu không dùng, làm mất ghi chú chưa kịp đồng bộ | Trung bình | Đồng bộ cloud ngay khi có mạng; xin lưu trữ bền vững |
+| Một người làm ba app và nền tảng chung | Cao | Làm theo mốc ở mục 8; dùng thư viện có sẵn cho PDF |
 | PDF lớn làm iPad hết bộ nhớ | Trung bình | Chỉ hiển thị các trang đang nhìn thấy; giới hạn kích thước file nhập (đề xuất 100 MB) |
 | Chi phí lưu trữ cloud tăng theo dung lượng PDF và ảnh | Trung bình | Đặt giới hạn dung lượng cho mỗi gói |
 
 ### Câu hỏi còn mở
 
-1. Duyệt lộ trình phát hành ở mục 8, hay giữ toàn bộ MVP vào 12/2026?
-2. Người chưa trả phí được dùng Takenote đến đâu? Giới hạn dung lượng cho người có gói là bao nhiêu?
-3. Có cần nhận dạng chữ viết tay để tạo flashcard từ chữ viết tay không, và vào đợt nào?
-4. Sổ tay đã xóa giữ trong 30 ngày, có đồng ý không?
-5. Ghi ADR chốt "web" cho nền tảng client của Takenote, có đồng ý không?
+1. Người chưa trả phí được dùng Takenote đến đâu? Giới hạn dung lượng cho người có gói là bao nhiêu?
+2. Có cần nhận dạng chữ viết tay để tạo flashcard từ chữ viết tay không, và làm trước hay sau ra mắt?
+3. Sổ tay đã xóa giữ trong 30 ngày, có đồng ý không?
+4. Ghi ADR chốt "web" cho nền tảng client của Takenote, có đồng ý không?
