@@ -103,3 +103,7 @@ Hệ quả (yêu cầu thiết kế): đúng = Violet Blue `#484AAA`, sai = Medi
 | 4 | C (chọn lại, thay cho B): bỏ hoàn toàn linh vật ở cả 3 app. Câu 1 vẫn giữ: Language vui hơn hai app kia, nhưng tạo cảm giác vui bằng màu, chuyển động và lời khen, không bằng linh vật | 2026-11-20 |
 | 5 | B: biểu tượng SVG một bộ (Phosphor) thay cho emoji ở thói quen, bài học và điều hướng; tô theo bảng 5 màu | 2026-11-20 |
 | 6 | B: nút chọn Sáng / Tối / Theo thiết bị trong cài đặt, mặc định Theo thiết bị; màu chính ở chế độ tối là Tropical Indigo | 2026-11-20 |
+| 7 | C: nhiều chuyển động (chuyển trang, thành phần trượt vào khi cuộn, hiệu ứng khen thưởng); luôn tắt khi thiết bị bật "giảm chuyển động" | 2026-11-20 |
+| 7b | Thêm đen `#000000` và trắng `#FFFFFF` vào bảng màu chuẩn (bảng có 7 màu) | 2026-11-20 |
+
+Hệ quả của 7b: chữ chính dùng đen trên nền sáng (đen trên Pale Purple 18.6:1), thay cho màu chữ tối suy ra ở câu 3b. Nút Tropical Indigo dùng chữ đen (8.9:1). Ở chế độ tối, nền đen, chữ trắng; Tropical Indigo và Pale Lavender đọc rõ trên nền đen, còn Violet Blue (2.9:1) và Medium Orchid (3.6:1) chỉ dùng cho mảng màu lớn hoặc nút có chữ trắng, không dùng làm màu chữ trên nền đen.
