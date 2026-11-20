@@ -80,3 +80,4 @@ Mỗi câu có lựa chọn gợi ý; chủ dự án trả lời bằng chữ c�
 | # | Trả lời | Ngày |
 |---|---|---|
 | 1 | C: Language vui, có linh vật; Habits và TakeNote gọn, tập trung; chung màu và font Olaa | 2026-11-20 |
+| 2 | B: nền, chữ, viền và màu trạng thái chung; mỗi app một màu nhận diện (Language xanh dương, Habits xanh lá, TakeNote cam) | 2026-11-20 |
