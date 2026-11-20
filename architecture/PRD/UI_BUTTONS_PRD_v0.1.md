@@ -213,7 +213,7 @@ Hôm nay · Lịch · Thói quen · Tôi — **Có**, 4 mục.
 | 7.1 | Thanh điều hướng Language đang có 6 mục. Gộp "Học" (khoá cũ) vào "Lộ trình" để còn 5? | Gộp |
 | 7.2 | Nút "Thêm thói quen" trên điện thoại: nút tròn nổi ở góc dưới phải, hay nút thường ở cuối danh sách? | Nút nổi |
 | 7.3 | Có thêm nút "Chuyển app" trên thanh trên cùng để đi giữa ba app không? | Có |
-| 7.4 | Thanh công cụ TakeNote trên iPad: nằm trên cùng (hiện tại) hay thanh nổi có thể kéo đi? | Trên cùng |
+| 7.4 | Thanh công cụ TakeNote trên iPad: nằm trên cùng (hiện tại) hay thanh nổi có thể kéo đi? | Đã trả lời: B |
 | 7.5 | Nút nào bạn thấy thừa, hoặc còn thiếu nút nào bạn cần? | Chủ dự án tự trả lời |
 
 ## 8. Câu trả lời của chủ dự án
@@ -236,3 +236,4 @@ Hôm nay · Lịch · Thói quen · Tôi — **Có**, 4 mục.
 | Đăng nhập | Giữ Olaa ID khi chuyển; nếu chưa đăng nhập ở app kia thì app kia hỏi đăng nhập |
 | Lưu ý kỹ thuật | Ba app đang ở ba địa chỉ web khác nhau, nên hiệu ứng gồm hai nửa: nửa "rời đi" trong app cũ và nửa "đến" trong app mới. Muốn liền mạch hoàn toàn và giữ đăng nhập chắc chắn, ba app nên ở chung một địa chỉ (ví dụ olaa.web.app/language, /note, /habits) — cần ADR riêng |
 | 7.3b | C: bỏ nút chuông. Dòng trên cùng bên phải chỉ có bộ chuyển app và nút "+" (ở màn hình có thêm mới). Thứ tự từ trái sang: nút "+", rồi bộ chuyển app. Ước lượng ở màn 320px: viên thuốc ~110px + 2 nút tròn 88px + nút "+" 44px + khoảng cách ~24px ≈ 266px, vừa trong 288px (đã trừ lề 16px mỗi bên); kiểm tra lại khi làm | 2026-11-20 |
+| 7.4 | B: thanh công cụ TakeNote là viên thuốc đen nổi (giống thanh điều hướng của ảnh mẫu), kéo được đến cạnh trên, dưới, trái hoặc phải. Yêu cầu kèm theo: tự bám vào cạnh gần nhất khi thả; nhớ vị trí cho từng thiết bị; khi đặt ở cạnh trái/phải thì xếp dọc; có tay nắm để kéo, không kéo khi đang vẽ; không che phần trang đang viết (trang tự chừa lề phía có thanh); vẫn dùng được bằng bàn phím | 2026-11-20 |
