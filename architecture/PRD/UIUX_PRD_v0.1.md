@@ -81,3 +81,18 @@ Mỗi câu có lựa chọn gợi ý; chủ dự án trả lời bằng chữ c�
 |---|---|---|
 | 1 | C: Language vui, có linh vật; Habits và TakeNote gọn, tập trung; chung màu và font Olaa | 2026-11-20 |
 | 2 | B: nền, chữ, viền và màu trạng thái chung; mỗi app một màu nhận diện (Language xanh dương, Habits xanh lá, TakeNote cam) | 2026-11-20 |
+| 3 | Bảng màu riêng của chủ dự án, dùng làm chuẩn cho cả 3 app: Violet Blue `#484AAA`, Tropical Indigo `#9791F1`, Pale Purple `#F7EBF9`, Pale Lavender `#DDC2F2`, Medium Orchid `#9847B4` | 2026-11-20 |
+
+### Đề xuất vai trò cho bảng màu (chờ chủ dự án xác nhận)
+
+Đo độ tương phản theo WCAG; chữ thường cần ít nhất 4.5:1.
+
+| Màu | Vai trò đề xuất | Tương phản đo được |
+|---|---|---|
+| Violet Blue `#484AAA` | Màu thương hiệu Olaa; nút chính, liên kết, viền focus; màu nhận diện Language | Chữ trắng trên nền này 7.4:1; trên nền Pale Purple 6.4:1 |
+| Medium Orchid `#9847B4` | Màu nhận diện Habits; điểm nhấn thứ hai (chuỗi ngày, huy hiệu) | Chữ trắng 5.4:1 |
+| Tropical Indigo `#9791F1` | Màu nhận diện TakeNote; thanh tiến độ, hình minh hoạ, ô được chọn; màu chính ở chế độ tối | Chữ trắng chỉ 2.8:1, nên nút màu này dùng chữ đậm `#2B2A3A` (5.1:1); không dùng làm màu chữ trên nền sáng |
+| Pale Purple `#F7EBF9` | Nền trang ở chế độ sáng | Chữ `#2B2A3A` 12.2:1 |
+| Pale Lavender `#DDC2F2` | Viền thẻ, chip, trạng thái được chọn, nền phụ | Không dùng chữ màu Tropical Indigo trên nền này (1.7:1) |
+
+Màu báo đúng/sai (xanh lá, đỏ) và màu chữ tối không nằm trong bảng; đề xuất giữ màu hiện tại cho các vai trò này để người dùng vẫn nhận ra đúng/sai bằng màu quen thuộc.
