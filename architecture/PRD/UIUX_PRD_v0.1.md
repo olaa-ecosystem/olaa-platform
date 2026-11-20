@@ -74,3 +74,9 @@ Mỗi câu có lựa chọn gợi ý; chủ dự án trả lời bằng chữ c�
 1. Cập nhật tài liệu này lên 1.0, ghi câu trả lời và lý do.
 2. Tạo design system dùng chung (màu, chữ, khoảng cách, bo góc, bóng, chuyển động) dưới dạng biến CSS trong `packages/` theo ADR mới, thay cho bộ biến đang lặp lại ở ba app.
 3. Áp dụng cho từng app theo thứ tự ưu tiên của chủ dự án, kiểm tra theo danh sách quy tắc ở mục 2.
+
+## 5. Câu trả lời của chủ dự án
+
+| # | Trả lời | Ngày |
+|---|---|---|
+| 1 | C: Language vui, có linh vật; Habits và TakeNote gọn, tập trung; chung màu và font Olaa | 2026-11-20 |
