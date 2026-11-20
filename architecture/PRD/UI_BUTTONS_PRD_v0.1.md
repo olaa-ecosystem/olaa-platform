@@ -158,12 +158,12 @@ Hôm nay · Lịch · Thói quen · Tôi — **Có**, 4 mục.
 | Hôm nay | Thói quen tự động | Học ngay (mở Olaa Language) · Đăng nhập để tự ghi nhận | Chữ | Có |
 | Hôm nay | Thẻ đóng băng | Đóng băng hôm nay · Bỏ đóng băng | Phụ | Có |
 | Hôm nay | Thói quen tạm dừng | Tiếp tục | Phụ | Có |
-| Hôm nay | Đáy | Thêm thói quen | Chính (nổi, góc dưới phải trên điện thoại) | Sửa |
+| Hôm nay | Đầu trang, góc trên phải | Thêm thói quen (+) | Biểu tượng tròn nền đen | Sửa (câu 7.2) |
 | Lịch | Trên cùng | Chọn thói quen (danh sách thả) | Lựa chọn | Có |
 | Lịch | Trên cùng | Tháng trước · Tháng sau | Biểu tượng | Có |
 | Lịch | Lưới | Mỗi ngày (mở chi tiết ngày) | Ô bấm được | Có |
 | Lịch | Chi tiết ngày | Đánh dấu · Bỏ qua · Đóng băng ngày này · Bỏ đóng băng | Lựa chọn / Phụ | Có |
-| Thói quen | Trên cùng phải | Thêm | Chính | Có |
+| Thói quen | Đầu trang, góc trên phải | Thêm thói quen (+) | Biểu tượng tròn nền đen | Sửa (câu 7.2) |
 | Thói quen | Mỗi hàng | Sửa | Hàng bấm được | Có |
 | Thói quen | Đã lưu trữ | Khôi phục | Phụ | Có |
 | Tạo / sửa thói quen | Form | Cách đo · Biểu tượng · Màu · Lặp lại · Ngày trong tuần · Bớt / Thêm một lần · Tự đánh dấu / Tự động | Lựa chọn | Có |
@@ -221,3 +221,4 @@ Hôm nay · Lịch · Thói quen · Tôi — **Có**, 4 mục.
 | # | Trả lời | Ngày |
 |---|---|---|
 | 7.1 | C: giữ đủ 6 mục trên thanh điều hướng Language (Học · Lộ trình · Chủ đề · Luyện tập · Thẻ từ · Hồ sơ). Yêu cầu kèm theo: trên điện thoại 320–375px, 6 nhãn phải đọc được không cắt chữ (nhãn ngắn, chữ 10–11px, vùng chạm mỗi mục vẫn ≥ 44px chiều cao) | 2026-11-20 |
+| 7.2 | Nút tròn "+" ở góc trên bên phải phần đầu trang Hôm nay và Thói quen (theo ảnh tham khảo chủ dự án gửi: nút tròn nền đen, biểu tượng + trắng, cạnh nút chuông), không dùng nút nổi ở góc dưới | 2026-11-20 |
