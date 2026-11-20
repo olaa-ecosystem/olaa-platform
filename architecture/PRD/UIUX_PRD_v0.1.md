@@ -124,3 +124,4 @@ Hệ quả của 7b: chữ chính dùng đen trên nền sáng (đen trên Pale 
 | Biểu đồ | Cột bo tròn, xếp chồng nhiều màu, vạch chéo | Tiến độ tuần (XP, thói quen) |
 | Chữ | To, nét mảnh ở tiêu đề, nhiều khoảng trống | SF / Inter, tiêu đề 28–32px nét thường, nội dung 15–17px |
 | Nền | Trắng / xám rất nhạt | Pale Purple ở chế độ sáng, đen ở chế độ tối |
+| 12 | Không có yêu cầu loại trừ thêm | 2026-11-20 |
