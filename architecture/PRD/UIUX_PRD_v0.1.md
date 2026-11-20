@@ -110,3 +110,17 @@ Hệ quả của 7b: chữ chính dùng đen trên nền sáng (đen trên Pale 
 | 8 | B: mật độ vừa phải cho cả 3 app | 2026-11-20 |
 | 9 | A: một trang giới thiệu chung cho Olaa (giới thiệu 3 app, đăng nhập Olaa ID, nút mở từng app); cần site Firebase hoặc tên miền mới | 2026-11-20 |
 | 10 | D: Language và Habits ưu tiên điện thoại; TakeNote ưu tiên iPad; vẫn chạy tốt trên mọi thiết bị | 2026-11-20 |
+| 11 | A: lấy phong cách của ảnh tham khảo chủ dự án gửi (app quản lý công việc, 3 màn hình điện thoại) làm mẫu cho cả 3 app, đổi màu theo bảng 7 màu | 2026-11-20 |
+
+### Phong cách mẫu (từ câu 11)
+
+| Thành phần | Theo ảnh mẫu | Áp dụng cho Olaa |
+|---|---|---|
+| Thẻ nội dung | Khối màu đặc, bo góc rất tròn (~28px), nút mũi tên tròn trắng ở góc trên phải, nhãn viên thuốc viền mờ ở góc dưới | Thẻ bài học, thẻ thói quen, bìa sổ tay; màu khối: đen, Tropical Indigo, Pale Lavender, Violet Blue, Medium Orchid |
+| Bộ lọc / trạng thái | Viên thuốc, số đếm trong vòng tròn trắng; đang chọn: nền màu đặc | Lọc trạng thái thói quen, cấp độ, thẻ ghi chú; tab Ngày / Tuần / Tháng |
+| Thanh điều hướng đáy | Viên thuốc đen nổi trên nền, biểu tượng trắng, mục đang chọn là vòng tròn trắng biểu tượng đen, chấm nhỏ báo mới | Cả 3 app trên điện thoại; Language 6 mục cần thử ở màn 320px |
+| Nút biểu tượng | Tròn: "+" nền đen, chuông nền Pale Lavender có chấm báo, bút nền đen | Nút thêm, thông báo, sửa |
+| Lịch | Lưới ô tròn; ngày được đánh dấu tô màu đặc theo trạng thái | Lịch Habits: đen = xong, Tropical Indigo = một phần, Pale Lavender = đóng băng (luôn kèm biểu tượng, không chỉ màu) |
+| Biểu đồ | Cột bo tròn, xếp chồng nhiều màu, vạch chéo | Tiến độ tuần (XP, thói quen) |
+| Chữ | To, nét mảnh ở tiêu đề, nhiều khoảng trống | SF / Inter, tiêu đề 28–32px nét thường, nội dung 15–17px |
+| Nền | Trắng / xám rất nhạt | Pale Purple ở chế độ sáng, đen ở chế độ tối |
