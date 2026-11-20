@@ -109,3 +109,4 @@ Hệ quả (yêu cầu thiết kế): đúng = Violet Blue `#484AAA`, sai = Medi
 Hệ quả của 7b: chữ chính dùng đen trên nền sáng (đen trên Pale Purple 18.2:1), thay cho màu chữ tối suy ra ở câu 3b. Nút Tropical Indigo dùng chữ đen (7.6:1). Ở chế độ tối, nền đen, chữ trắng; Tropical Indigo và Pale Lavender đọc rõ trên nền đen, còn Violet Blue (2.8:1) và Medium Orchid (3.9:1) chỉ dùng cho mảng màu lớn hoặc nút có chữ trắng, không dùng làm màu chữ trên nền đen.
 | 8 | B: mật độ vừa phải cho cả 3 app | 2026-11-20 |
 | 9 | A: một trang giới thiệu chung cho Olaa (giới thiệu 3 app, đăng nhập Olaa ID, nút mở từng app); cần site Firebase hoặc tên miền mới | 2026-11-20 |
+| 10 | D: Language và Habits ưu tiên điện thoại; TakeNote ưu tiên iPad; vẫn chạy tốt trên mọi thiết bị | 2026-11-20 |
