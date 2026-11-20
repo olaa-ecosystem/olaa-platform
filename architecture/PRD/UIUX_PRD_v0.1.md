@@ -100,4 +100,4 @@ Màu báo đúng/sai (xanh lá, đỏ) và màu chữ tối không nằm trong b
 | 3b | C: dùng vai trò màu như bảng trên, và không thêm màu ngoài bảng, kể cả cho đúng/sai | 2026-11-20 |
 
 Hệ quả (yêu cầu thiết kế): đúng = Violet Blue `#484AAA`, sai = Medium Orchid `#9847B4`. Hai màu này cùng tông tím, người mù màu hoặc nhìn nhanh khó phân biệt, nên trạng thái đúng/sai **không được chỉ dựa vào màu**: luôn kèm biểu tượng (dấu ✓ / ✗ dạng SVG), chữ ("Chính xác" / "Chưa đúng") và âm thanh khi bật. Chữ tối dùng màu đậm nhất có thể suy ra từ bảng (Violet Blue pha tối) thay cho `#2B2A3A`; sẽ đo lại tương phản khi làm design system.
-| 4 | B: linh vật chỉ ở màn chào, khen khi xong bài, an ủi khi sai, ôn tập; trang học và luyện tập gọn | 2026-11-20 |
+| 4 | C (chọn lại, thay cho B): bỏ hoàn toàn linh vật ở cả 3 app. Câu 1 vẫn giữ: Language vui hơn hai app kia, nhưng tạo cảm giác vui bằng màu, chuyển động và lời khen, không bằng linh vật | 2026-11-20 |
