@@ -1,0 +1,76 @@
+# PRD giao diện và trải nghiệm (UI/UX) — Olaa web
+
+| | |
+|---|---|
+| Phiên bản | 0.1 (bản nháp để hỏi lại chủ dự án) |
+| Ngày | 2026-11-20 |
+| Phạm vi | Ba web app: Olaa Language, Olaa Habits, Olaa TakeNote |
+| Trạng thái | DRAFT: các mục "Câu hỏi" chưa có câu trả lời |
+| Công cụ tham khảo | Skill "UI UX Pro Max" (chủ dự án cung cấp): tra cứu phong cách, màu, chữ, quy tắc UX từ dữ liệu offline |
+
+Tài liệu này không thay đổi 22 nhánh kiến trúc. Nó gom các quyết định về giao diện đang để ngỏ, để chủ dự án trả lời từng câu. Câu trả lời sẽ thành phiên bản 1.0 và một design system dùng chung cho cả ba app.
+
+## 1. Những gì đã biết
+
+| Chủ đề | Hiện trạng | Nguồn |
+|---|---|---|
+| Người dùng | Người Việt, học sinh và sinh viên 15–25 tuổi, học nghiêm túc; TakeNote dùng nhiều trên iPad | PRD từng app, phỏng vấn |
+| Nền tảng | Web (React + Vite), chạy trên điện thoại, iPad và máy tính | ADR-0003 |
+| Ngôn ngữ giao diện | Tiếng Việt mặc định, có English (đang làm) | Yêu cầu 2026-11-20 |
+| Font | San Francisco trên thiết bị Apple; Inter (đóng gói trong app) trên Windows, Android | Yêu cầu 2026-11-20; giấy phép SF không cho nhúng vào web |
+| Màu hiện tại | Xanh dương `#2d80bb` chính, cam `#e87e2d` nhấn, nền kem `#fdf7ec`; có chế độ tối theo hệ thống | `src/styles/global.css` ba app |
+| Nhân vật | 10 linh vật (gấu, mèo, cá voi…) trong Language | `components/mascots` |
+| Biểu tượng | Biểu tượng SVG tự vẽ cho điều hướng; emoji cho biểu tượng thói quen và bài học | Mã nguồn |
+
+## 2. Gợi ý từ skill (chưa phải quyết định)
+
+Skill được chạy hai lần với hai cách mô tả sản phẩm. Kết quả khác nhau rõ, và đó chính là câu hỏi lớn nhất cho chủ dự án (câu 1).
+
+| | Hướng A: "app học ngôn ngữ vui" | Hướng B: "app học tập và năng suất" |
+|---|---|---|
+| Phong cách | Claymorphism: khối mềm, viền dày, bóng đôi, bo 16–24px | Flat Design: phẳng, không bóng, đường nét sạch |
+| Màu | Chàm `#4F46E5` + xanh lá tiến độ `#16A34A`, nền `#EEF2FF` | Xanh ngọc `#0D9488` + cam hành động `#EA580C`, nền `#F0FDFA` |
+| Chữ skill đề xuất | Baloo 2 + Comic Neue (dành cho trẻ em) | Plus Jakarta Sans |
+| Hợp với | Language, Habits (chuỗi ngày, huy hiệu) | TakeNote, Habits |
+| Cần tránh | Thiết kế nhàm, thiếu động lực | Onboarding dài, chậm |
+
+Skill gợi ý thêm theo loại sản phẩm:
+- **App học ngôn ngữ**: màu vui + thanh tiến độ rõ; trang giới thiệu dạng "tính năng + bằng chứng xã hội".
+- **App theo dõi thói quen**: cam ấm cho chuỗi ngày, xanh lá cho tiến độ.
+- **App ghi chú trên iPad**: dữ liệu của skill không có mục này; dùng nguyên tắc chung (tập trung vào nội dung, ít khung viền).
+
+Quy tắc UX skill coi là bắt buộc, áp dụng dù chọn hướng nào:
+- Chữ thường tương phản ít nhất 4.5:1 ở cả chế độ sáng và tối.
+- Vùng chạm tối thiểu 44×44 px; nút có trạng thái nhấn rõ, không làm xô lệch bố cục.
+- Không dùng emoji làm biểu tượng điều hướng hay điều khiển; dùng một bộ SVG thống nhất (skill đề xuất Phosphor).
+- Tôn trọng "giảm chuyển động" của hệ điều hành; onboarding luôn có nút Bỏ qua và Quay lại.
+- Thiết kế cho điện thoại trước, kiểm tra ở 375, 768, 1024, 1440 px.
+
+Điểm vướng với hiện trạng:
+- Font skill đề xuất (Baloo 2, Plus Jakarta Sans) khác lựa chọn SF/Inter của chủ dự án. Bản này giữ SF/Inter.
+- Biểu tượng thói quen và bài học đang là emoji; theo skill nên đổi sang SVG.
+
+## 3. Câu hỏi cho chủ dự án
+
+Mỗi câu có lựa chọn gợi ý; chủ dự án trả lời bằng chữ cái hoặc ý riêng.
+
+| # | Câu hỏi | Lựa chọn | Gợi ý |
+|---|---|---|---|
+| 1 | Cảm giác chung của cả ba app? | A. Vui, nhiều màu, có linh vật (hướng A) · B. Gọn, tập trung, chuyên nghiệp (hướng B) · C. Language vui, Habits và TakeNote gọn | C |
+| 2 | Ba app dùng chung một bộ màu hay mỗi app một màu riêng trên nền chung? | A. Một bộ chung · B. Nền chung, mỗi app một màu nhận diện | B |
+| 3 | Màu thương hiệu Olaa chính là màu nào? | A. Giữ xanh `#2d80bb` · B. Chàm (hướng A) · C. Xanh ngọc (hướng B) · D. Màu bạn chọn | A |
+| 4 | Linh vật trong Language: giữ, giảm hay bỏ? | A. Giữ như hiện tại · B. Chỉ ở màn chào, kết quả, ôn tập · C. Bỏ | B |
+| 5 | Biểu tượng thói quen và bài học: emoji hay SVG? | A. Giữ emoji · B. Đổi sang bộ SVG Phosphor | B |
+| 6 | Chế độ tối? | A. Theo hệ thống (hiện tại) · B. Thêm nút chọn Sáng / Tối / Theo hệ thống | B |
+| 7 | Mức chuyển động và hiệu ứng? | A. Tối thiểu · B. Vừa phải (khen thưởng khi xong bài) · C. Nhiều | B |
+| 8 | Mật độ thông tin? | A. Thoáng · B. Vừa · C. Dày như bảng điều khiển | A cho Language, B cho Habits và TakeNote |
+| 9 | Có cần trang giới thiệu (landing page) chung cho Olaa trước khi vào app không? | A. Có, một trang chung · B. Mỗi app một trang · C. Chưa cần | A |
+| 10 | Thiết bị ưu tiên khi thiết kế? | A. Điện thoại · B. iPad · C. Máy tính | A cho Language và Habits, B cho TakeNote |
+| 11 | Có app hoặc website nào bạn thích về giao diện để tham khảo không? | Tự trả lời (tên hoặc ảnh chụp) | — |
+| 12 | Có điều gì bạn không muốn thấy trong giao diện? | Tự trả lời | — |
+
+## 4. Sau khi có câu trả lời
+
+1. Cập nhật tài liệu này lên 1.0, ghi câu trả lời và lý do.
+2. Tạo design system dùng chung (màu, chữ, khoảng cách, bo góc, bóng, chuyển động) dưới dạng biến CSS trong `packages/` theo ADR mới, thay cho bộ biến đang lặp lại ở ba app.
+3. Áp dụng cho từng app theo thứ tự ưu tiên của chủ dự án, kiểm tra theo danh sách quy tắc ở mục 2.
