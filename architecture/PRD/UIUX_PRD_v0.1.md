@@ -107,3 +107,4 @@ Hệ quả (yêu cầu thiết kế): đúng = Violet Blue `#484AAA`, sai = Medi
 | 7b | Thêm đen `#000000` và trắng `#FFFFFF` vào bảng màu chuẩn (bảng có 7 màu) | 2026-11-20 |
 
 Hệ quả của 7b: chữ chính dùng đen trên nền sáng (đen trên Pale Purple 18.2:1), thay cho màu chữ tối suy ra ở câu 3b. Nút Tropical Indigo dùng chữ đen (7.6:1). Ở chế độ tối, nền đen, chữ trắng; Tropical Indigo và Pale Lavender đọc rõ trên nền đen, còn Violet Blue (2.8:1) và Medium Orchid (3.9:1) chỉ dùng cho mảng màu lớn hoặc nút có chữ trắng, không dùng làm màu chữ trên nền đen.
+| 8 | B: mật độ vừa phải cho cả 3 app | 2026-11-20 |
