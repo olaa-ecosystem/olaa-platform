@@ -222,3 +222,16 @@ Hôm nay · Lịch · Thói quen · Tôi — **Có**, 4 mục.
 |---|---|---|
 | 7.1 | C: giữ đủ 6 mục trên thanh điều hướng Language (Học · Lộ trình · Chủ đề · Luyện tập · Thẻ từ · Hồ sơ). Yêu cầu kèm theo: trên điện thoại 320–375px, 6 nhãn phải đọc được không cắt chữ (nhãn ngắn, chữ 10–11px, vùng chạm mỗi mục vẫn ≥ 44px chiều cao) | 2026-11-20 |
 | 7.2 | Nút tròn "+" ở góc trên bên phải phần đầu trang Hôm nay và Thói quen (theo ảnh tham khảo chủ dự án gửi: nút tròn nền đen, biểu tượng + trắng, cạnh nút chuông), không dùng nút nổi ở góc dưới | 2026-11-20 |
+| 7.3 | Có. Bộ chuyển app gồm 3 nút liền nhau ở góc trên cùng bên phải, thứ tự cố định: Olaa Language → Olaa Note (TakeNote) → Olaa Habits. App đang mở hiện dạng viên thuốc (biểu tượng + tên app); 2 app còn lại là nút tròn chỉ có biểu tượng. Chuyển app có hiệu ứng chuyển cảnh | 2026-11-20 |
+
+### Bộ chuyển app (từ câu 7.3)
+
+| | Mô tả |
+|---|---|
+| Vị trí | Góc trên cùng bên phải, ở mọi màn hình chính của cả 3 app (không hiện trong phiên toàn màn hình như đang làm bài, đang vẽ) |
+| Thứ tự | Language · Note · Habits, giống nhau ở cả 3 app |
+| App đang mở | Viên thuốc: biểu tượng + tên ("Language", "Note", "Habits"), nền màu nhận diện của app, chữ trắng (Note: chữ đen trên Tropical Indigo) |
+| App khác | Nút tròn ≥ 44px, chỉ có biểu tượng, nền Pale Lavender; tên app đọc cho trình đọc màn hình ("Mở Olaa Habits") |
+| Khi bấm app khác | 1) Viên thuốc hiện tại thu lại thành tròn, nút vừa bấm giãn ra thành viên thuốc (khoảng 300ms). 2) Nội dung trang mờ dần và trượt nhẹ. 3) Chuyển sang app kia; app kia mở với nội dung hiện dần lên. Tắt hiệu ứng khi thiết bị bật "giảm chuyển động" |
+| Đăng nhập | Giữ Olaa ID khi chuyển; nếu chưa đăng nhập ở app kia thì app kia hỏi đăng nhập |
+| Lưu ý kỹ thuật | Ba app đang ở ba địa chỉ web khác nhau, nên hiệu ứng gồm hai nửa: nửa "rời đi" trong app cũ và nửa "đến" trong app mới. Muốn liền mạch hoàn toàn và giữ đăng nhập chắc chắn, ba app nên ở chung một địa chỉ (ví dụ olaa.web.app/language, /note, /habits) — cần ADR riêng |
