@@ -74,7 +74,7 @@ Nút chỉ có biểu tượng luôn có tên cho trình đọc màn hình (`ari
 
 | Nút | Trạng thái | Ghi chú |
 |---|---|---|
-| Học · Lộ trình · Chủ đề · Luyện tập · Thẻ từ · Hồ sơ | Sửa | Hiện có 6 mục, quá giới hạn 5 trên điện thoại. Đề xuất gộp "Học" (khoá cũ) vào "Lộ trình", còn 5 mục — xem câu hỏi 7.1 |
+| Học · Lộ trình · Chủ đề · Luyện tập · Thẻ từ · Hồ sơ | Có | Giữ 6 mục (câu 7.1) |
 
 ### 4.2 Màn chào và bắt đầu
 
@@ -215,3 +215,9 @@ Hôm nay · Lịch · Thói quen · Tôi — **Có**, 4 mục.
 | 7.3 | Có thêm nút "Chuyển app" trên thanh trên cùng để đi giữa ba app không? | Có |
 | 7.4 | Thanh công cụ TakeNote trên iPad: nằm trên cùng (hiện tại) hay thanh nổi có thể kéo đi? | Trên cùng |
 | 7.5 | Nút nào bạn thấy thừa, hoặc còn thiếu nút nào bạn cần? | Chủ dự án tự trả lời |
+
+## 8. Câu trả lời của chủ dự án
+
+| # | Trả lời | Ngày |
+|---|---|---|
+| 7.1 | C: giữ đủ 6 mục trên thanh điều hướng Language (Học · Lộ trình · Chủ đề · Luyện tập · Thẻ từ · Hồ sơ). Yêu cầu kèm theo: trên điện thoại 320–375px, 6 nhãn phải đọc được không cắt chữ (nhãn ngắn, chữ 10–11px, vùng chạm mỗi mục vẫn ≥ 44px chiều cao) | 2026-11-20 |
