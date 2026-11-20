@@ -96,3 +96,7 @@ Mỗi câu có lựa chọn gợi ý; chủ dự án trả lời bằng chữ c�
 | Pale Lavender `#DDC2F2` | Viền thẻ, chip, trạng thái được chọn, nền phụ | Không dùng chữ màu Tropical Indigo trên nền này (1.7:1) |
 
 Màu báo đúng/sai (xanh lá, đỏ) và màu chữ tối không nằm trong bảng; đề xuất giữ màu hiện tại cho các vai trò này để người dùng vẫn nhận ra đúng/sai bằng màu quen thuộc.
+
+| 3b | C: dùng vai trò màu như bảng trên, và không thêm màu ngoài bảng, kể cả cho đúng/sai | 2026-11-20 |
+
+Hệ quả (yêu cầu thiết kế): đúng = Violet Blue `#484AAA`, sai = Medium Orchid `#9847B4`. Hai màu này cùng tông tím, người mù màu hoặc nhìn nhanh khó phân biệt, nên trạng thái đúng/sai **không được chỉ dựa vào màu**: luôn kèm biểu tượng (dấu ✓ / ✗ dạng SVG), chữ ("Chính xác" / "Chưa đúng") và âm thanh khi bật. Chữ tối dùng màu đậm nhất có thể suy ra từ bảng (Violet Blue pha tối) thay cho `#2B2A3A`; sẽ đo lại tương phản khi làm design system.
