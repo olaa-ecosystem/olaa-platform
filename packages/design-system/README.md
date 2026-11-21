@@ -4,7 +4,7 @@ Tài sản thiết kế dùng chung cho Olaa Language, Olaa Habits và Olaa Take
 
 ## Biểu tượng chức năng — `icons/`
 
-20 biểu tượng nét đặc, mỗi file một SVG vuông. Biểu tượng dùng `fill="currentColor"` nên lấy màu của chữ xung quanh: đặt `color` theo bảng màu (Violet Blue, Black, White…) thay vì sửa file.
+20 biểu tượng nét đặc, mỗi file một SVG vuông. Biểu tượng dùng `fill="currentColor"` nên lấy màu của chữ xung quanh: đặt `color` theo bảng màu vàng (đen `#151515`, Vàng đậm `#7A5800`, trắng…) thay vì sửa file. Không tô biểu tượng bằng Vàng Olaa trên nền trắng (1.8:1, khó thấy).
 
 | File | Chức năng |
 |---|---|
@@ -52,7 +52,7 @@ Tấm vé vàng trên nền bo góc, hai bản sáng và tối.
 | `png/icon-maskable-512.png` | Web app manifest (`purpose: maskable`) |
 | `png/icon-dark-192.png`, `png/icon-dark-512.png` | Bản tối, khi cần |
 
-Màu vàng của vé (#FFD84D → #F5B900) nằm ngoài bảng 7 màu. Chỉ dùng cho biểu tượng app, không dùng trong giao diện.
+Hai màu vàng của vé (`#FFD84D`, `#F5B900`) là gốc của bảng màu chung cho cả 3 app (PRD UI/UX, câu 3c).
 
 ## Nguồn — `source/`
 

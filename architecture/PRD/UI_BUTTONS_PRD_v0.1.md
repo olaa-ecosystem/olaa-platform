@@ -18,12 +18,12 @@ Cột **Trạng thái**: **Có** = đã có trong app · **Mới** = cần thêm
 
 | Loại | Dùng khi | Hình dạng | Màu (chế độ sáng) |
 |---|---|---|---|
-| **Chính** | Hành động chính của màn hình; tối đa **một** nút chính mỗi vùng | Nền đặc, bo góc, chữ in đậm | Nền màu nhận diện của app, chữ trắng (Language: Violet Blue; Habits: Medium Orchid; TakeNote: Tropical Indigo với chữ đen) |
-| **Phụ** | Hành động thay thế bên cạnh nút chính | Viền 2px, nền trắng | Viền và chữ màu nhận diện |
-| **Chữ** | Hành động nhẹ: Quay lại, Quên mật khẩu, Huỷ | Chỉ có chữ | Chữ Violet Blue |
-| **Biểu tượng** | Thao tác lặp lại nhiều: hoàn tác, chèn ảnh, nghe | Hình vuông/tròn ≥ 44×44px, biểu tượng SVG trong bộ Olaa (mục 9) | Biểu tượng đen; khi đang bật: nền Pale Lavender |
-| **Nguy hiểm** | Xoá, đặt lại dữ liệu | Như nút Chữ hoặc Phụ, luôn có hộp xác nhận | Medium Orchid + biểu tượng thùng rác; không chỉ dựa vào màu |
-| **Lựa chọn** (chip) | Chọn một trong vài giá trị: ngôn ngữ, mục tiêu XP, giao diện | Viên thuốc bo tròn | Đang chọn: nền Pale Lavender, viền màu nhận diện |
+| **Chính** | Hành động chính của màn hình; tối đa **một** nút chính mỗi vùng | Nền đặc, bo góc, chữ in đậm | Nền Vàng Olaa `#F5B900`, chữ đen `#151515` (10.3:1); giống nhau ở cả 3 app |
+| **Phụ** | Hành động thay thế bên cạnh nút chính | Viền 2px, nền trắng | Viền và chữ đen `#151515` |
+| **Chữ** | Hành động nhẹ: Quay lại, Quên mật khẩu, Huỷ | Chỉ có chữ | Chữ Vàng đậm `#7A5800` (6.5:1 trên nền trắng) |
+| **Biểu tượng** | Thao tác lặp lại nhiều: hoàn tác, chèn ảnh, nghe | Hình vuông/tròn ≥ 44×44px, biểu tượng SVG trong bộ Olaa (mục 9) | Biểu tượng đen; khi đang bật: nền Vàng kem `#FFEDA8` |
+| **Nguy hiểm** | Xoá, đặt lại dữ liệu | Như nút Chữ hoặc Phụ, luôn có hộp xác nhận | Chữ đen, biểu tượng `delete`, hộp xác nhận; không có màu đỏ (chỉ dùng bảng vàng – đen – trắng) |
+| **Lựa chọn** (chip) | Chọn một trong vài giá trị: ngôn ngữ, mục tiêu XP, giao diện | Viên thuốc bo tròn | Đang chọn: nền Vàng Olaa, chữ đen; chưa chọn: nền trắng, viền Vàng kem |
 
 ### 1.2 Quy tắc vị trí
 
@@ -230,8 +230,8 @@ Hôm nay · Lịch · Thói quen · Tôi — **Có**, 4 mục.
 |---|---|
 | Vị trí | Góc trên cùng bên phải, ở mọi màn hình chính của cả 3 app (không hiện trong phiên toàn màn hình như đang làm bài, đang vẽ) |
 | Thứ tự | Language · Note · Habits, giống nhau ở cả 3 app |
-| App đang mở | Viên thuốc: biểu tượng + tên ("Language", "Note", "Habits"), nền màu nhận diện của app, chữ trắng (Note: chữ đen trên Tropical Indigo) |
-| App khác | Nút tròn ≥ 44px, chỉ có biểu tượng, nền Pale Lavender; tên app đọc cho trình đọc màn hình ("Mở Olaa Habits") |
+| App đang mở | Viên thuốc: biểu tượng + tên ("Language", "Note", "Habits"), nền Vàng Olaa, chữ đen (cả 3 app cùng màu; phân biệt app bằng biểu tượng và tên) |
+| App khác | Nút tròn ≥ 44px, chỉ có biểu tượng đen, nền Vàng kem `#FFEDA8`; tên app đọc cho trình đọc màn hình ("Mở Olaa Habits") |
 | Khi bấm app khác | 1) Viên thuốc hiện tại thu lại thành tròn, nút vừa bấm giãn ra thành viên thuốc (khoảng 300ms). 2) Nội dung trang mờ dần và trượt nhẹ. 3) Chuyển sang app kia; app kia mở với nội dung hiện dần lên. Tắt hiệu ứng khi thiết bị bật "giảm chuyển động" |
 | Đăng nhập | Giữ Olaa ID khi chuyển; nếu chưa đăng nhập ở app kia thì app kia hỏi đăng nhập |
 | Lưu ý kỹ thuật | Ba app đang ở ba địa chỉ web khác nhau, nên hiệu ứng gồm hai nửa: nửa "rời đi" trong app cũ và nửa "đến" trong app mới. Muốn liền mạch hoàn toàn và giữ đăng nhập chắc chắn, ba app nên ở chung một địa chỉ (ví dụ olaa.web.app/language, /note, /habits) — cần ADR riêng |

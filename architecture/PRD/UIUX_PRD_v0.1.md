@@ -85,6 +85,8 @@ Mỗi câu có lựa chọn gợi ý; chủ dự án trả lời bằng chữ c�
 
 ### Đề xuất vai trò cho bảng màu (chờ chủ dự án xác nhận)
 
+> **Đã thay** bằng bảng màu vàng ở câu 3c (2026-11-21). Phần dưới giữ lại làm lịch sử.
+
 Đo độ tương phản theo WCAG; chữ thường cần ít nhất 4.5:1.
 
 | Màu | Vai trò đề xuất | Tương phản đo được |
@@ -130,5 +132,29 @@ Hệ quả của 7b: chữ chính dùng đen trên nền sáng (đen trên Pale 
 
 Hệ quả của 5b và 5c:
 - File nằm ở `packages/design-system/` (module 04.01), cách dùng ghi trong README của package.
-- Màu vàng của vé (`#FFD84D` → `#F5B900`) nằm ngoài bảng 7 màu. Đây là ngoại lệ duy nhất, chỉ cho biểu tượng app; giao diện bên trong app vẫn chỉ dùng 7 màu.
 - Bộ 20 biểu tượng chưa có một số biểu tượng mà nút trong app cần; danh sách ở `UI_BUTTONS_PRD_v0.1.md`, mục 9.
+
+| 3c | Đổi toàn bộ màu của cả 3 app sang màu vàng của biểu tượng app. Thay cho câu 3, 3b và 7b (bảng 7 màu tím) | 2026-11-21 |
+
+### Bảng màu vàng (từ câu 3c)
+
+Lấy từ biểu tượng app: hai màu vàng của vé, nền trắng, nền đen `#151515`. Thêm ba sắc vàng suy ra để làm nền và chữ, vì vàng trên trắng chỉ đạt 1.8:1, không đọc được.
+
+| Màu | Mã | Vai trò | Tương phản đo được |
+|---|---|---|---|
+| Vàng Olaa | `#F5B900` | Màu thương hiệu: nút chính, viên thuốc app đang mở, chip đang chọn, thanh tiến độ, mảng màu lớn; màu nhấn ở chế độ tối | Chữ đen `#151515` trên nền này 10.3:1. Không dùng chữ trắng (1.8:1) |
+| Vàng sáng | `#FFD84D` | Hover, hiệu ứng khen thưởng, dải chuyển màu như biểu tượng app | Chữ đen 13.2:1 |
+| Vàng kem | `#FFEDA8` | Nền phụ, nút biểu tượng đang bật, viền chip, ô lịch "một phần" | Chữ đen 15.6:1 |
+| Vàng nhạt | `#FFF6D6` | Nền trang ở chế độ sáng | Chữ đen 16.9:1 |
+| Vàng đậm | `#7A5800` | Chữ màu vàng trên nền sáng: liên kết, nút Chữ, số liệu nhấn | 6.5:1 trên trắng, 6.0:1 trên Vàng nhạt |
+| Đen | `#151515` | Chữ chính, thanh điều hướng đáy, nút "+", thanh công cụ TakeNote; nền chế độ tối | 18.3:1 với trắng |
+| Trắng | `#FFFFFF` | Thẻ, nền nút Phụ; chữ trên nền đen | — |
+
+Hệ quả:
+- **Câu 2 đổi**: ba app không còn màu nhận diện riêng; cả ba cùng vàng – đen – trắng. App phân biệt bằng biểu tượng (`language`, `note`, `habits`) và tên trong bộ chuyển app.
+- **Đúng / sai**: đúng = nền Vàng Olaa, dấu ✓, chữ "Chính xác"; sai = nền đen, chữ trắng, dấu ✗, chữ "Chưa đúng". Vẫn bắt buộc có biểu tượng và chữ, không chỉ dựa vào màu.
+- **Nút nguy hiểm**: không có đỏ; dùng chữ đen, biểu tượng thùng rác và hộp xác nhận ghi rõ hậu quả.
+- **Chế độ tối**: nền `#151515`, chữ trắng, nút chính Vàng Olaa chữ đen, liên kết Vàng sáng (13.2:1). Không dùng Vàng đậm trên nền đen.
+- **Lịch Habits**: xong = Vàng Olaa + ✓; một phần = Vàng kem; đóng băng = viền đen + biểu tượng đóng băng; bỏ qua = trắng có gạch chéo.
+- **Ảnh mẫu (câu 11)**: các khối màu đổi thành đen, Vàng Olaa, Vàng kem, trắng.
+- Màu vàng của biểu tượng app giờ thuộc bảng màu, không còn là ngoại lệ.
