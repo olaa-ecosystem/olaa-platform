@@ -23,3 +23,9 @@ Mỗi mục gồm: ngày, nhánh hoặc repository nguồn, nhánh bị ảnh h�
 | 05, 09 | 01 | dependency | Firestore rules dùng chung cho project `olaa-ecosystem`; vùng `language/{uid}` cho tiến độ học của Language | ADR-0004, `infrastructure/firebase/` | Language ghi đúng shape `stateJson`, `updatedAt`, `schemaVersion` |
 | 05, 09 | 02 | dependency | Thêm vùng `habits/{uid}` vào Firestore rules cho Olaa Habits | ADR-0004, `infrastructure/firebase/` | Publish lại `firestore.rules` |
 | 20, 01 | 02 | contract | Đề xuất event `language.daily_goal.completed`, `language.lesson.completed` qua Firestore `events/`; luật chỉ cho tạo, không sửa | `contracts/events/language-events.md` | Language phát event; Habits đọc để tự đánh dấu. Publish lại `firestore.rules` |
+
+## 2026-11-21
+
+| Nguồn | Ảnh hưởng | Loại | Mô tả | Tham chiếu | Việc cần làm |
+|---|---|---|---|---|---|
+| 01, 02, 03 | 04 | breaking | Gỡ toàn bộ giao diện (component, CSS, font, hình, router, test giao diện) khỏi 3 repository app theo yêu cầu chủ dự án, để import bộ giao diện mới; giữ logic, dữ liệu, dịch vụ và test logic. Xoá bản mẫu `apps/ui-prototype`. Language bỏ dạng bài "chọn hình" (dùng hình linh vật) | Nhánh `chore/remove-ui` ở 4 repository | Giao diện mới gắn vào `#root`, dùng các module trong `src/` của từng app; theo `PRD/UIUX_PRD_v0.1.md` và `PRD/UI_BUTTONS_PRD_v0.1.md` |
