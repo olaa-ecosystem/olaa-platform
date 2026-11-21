@@ -1,0 +1,18 @@
+# Normalise line endings: text files are stored and checked out with LF on every OS.
+* text=auto eol=lf
+
+# Binary files: never diff or convert.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.woff binary
+*.woff2 binary
+
+# Lockfiles: hide from diffs and avoid hand merges.
+pnpm-lock.yaml linguist-generated=true -diff
+package-lock.json linguist-generated=true -diff

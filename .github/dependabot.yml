@@ -1,0 +1,12 @@
+# Weekly update PRs for workflow actions and the Firebase rules test tooling.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+  - package-ecosystem: npm
+    directory: /infrastructure/firebase
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
