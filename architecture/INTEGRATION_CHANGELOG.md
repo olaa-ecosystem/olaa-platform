@@ -23,3 +23,9 @@ Mỗi mục gồm: ngày, nhánh hoặc repository nguồn, nhánh bị ảnh h�
 | 05, 09 | 01 | dependency | Firestore rules dùng chung cho project `olaa-ecosystem`; vùng `language/{uid}` cho tiến độ học của Language | ADR-0004, `infrastructure/firebase/` | Language ghi đúng shape `stateJson`, `updatedAt`, `schemaVersion` |
 | 05, 09 | 02 | dependency | Thêm vùng `habits/{uid}` vào Firestore rules cho Olaa Habits | ADR-0004, `infrastructure/firebase/` | Publish lại `firestore.rules` |
 | 20, 01 | 02 | contract | Đề xuất event `language.daily_goal.completed`, `language.lesson.completed` qua Firestore `events/`; luật chỉ cho tạo, không sửa | `contracts/events/language-events.md` | Language phát event; Habits đọc để tự đánh dấu. Publish lại `firestore.rules` |
+
+## 2026-11-21 — bộ biểu tượng
+
+| Nguồn | Ảnh hưởng | Loại | Mô tả | Tham chiếu | Việc cần làm |
+|---|---|---|---|---|---|
+| 04 (04.01) | 01, 02, 03 | package | Thêm `packages/design-system/`: 20 biểu tượng chức năng SVG và biểu tượng app (sáng/tối, PNG cho favicon và manifest). Thay bộ Phosphor đã chọn ở PRD UI/UX câu 5 | `packages/design-system/README.md` | Khi import giao diện mới: dùng các biểu tượng này cho nút và điều hướng, gắn favicon và manifest từ `app-icon/png/` |

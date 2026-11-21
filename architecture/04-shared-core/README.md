@@ -13,7 +13,7 @@ Toàn bộ phạm vi chi tiết: `architecture/OLAA_MASTER_ARCHITECTURE.md`, m�
 ## 3. Các module con
 | ID | Module | Mô tả | Trạng thái |
 |---|---|---|---|
-| 04.01 | [design-system](modules/04.01-design-system.md) | Tokens, typography, color, spacing, themes, component states và design governance. | NOT STARTED |
+| 04.01 | [design-system](modules/04.01-design-system.md) | Tokens, typography, color, spacing, themes, component states và design governance. | IN PROGRESS |
 | 04.02 | [shared-ui](modules/04.02-shared-ui.md) | Navigation components, forms, dialogs, tables, calendars, editors' primitives và reusable patterns. | NOT STARTED |
 | 04.03 | [authentication](modules/04.03-authentication.md) | Client auth flows, token lifecycle, secure session handling và identity SDK. | NOT STARTED |
 | 04.04 | [authorization](modules/04.04-authorization.md) | Permission model, role checks, policy evaluation và client-side capability gating. | NOT STARTED |

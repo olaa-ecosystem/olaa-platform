@@ -21,7 +21,7 @@ Cột **Trạng thái**: **Có** = đã có trong app · **Mới** = cần thêm
 | **Chính** | Hành động chính của màn hình; tối đa **một** nút chính mỗi vùng | Nền đặc, bo góc, chữ in đậm | Nền màu nhận diện của app, chữ trắng (Language: Violet Blue; Habits: Medium Orchid; TakeNote: Tropical Indigo với chữ đen) |
 | **Phụ** | Hành động thay thế bên cạnh nút chính | Viền 2px, nền trắng | Viền và chữ màu nhận diện |
 | **Chữ** | Hành động nhẹ: Quay lại, Quên mật khẩu, Huỷ | Chỉ có chữ | Chữ Violet Blue |
-| **Biểu tượng** | Thao tác lặp lại nhiều: hoàn tác, chèn ảnh, nghe | Hình vuông/tròn ≥ 44×44px, biểu tượng SVG Phosphor | Biểu tượng đen; khi đang bật: nền Pale Lavender |
+| **Biểu tượng** | Thao tác lặp lại nhiều: hoàn tác, chèn ảnh, nghe | Hình vuông/tròn ≥ 44×44px, biểu tượng SVG trong bộ Olaa (mục 9) | Biểu tượng đen; khi đang bật: nền Pale Lavender |
 | **Nguy hiểm** | Xoá, đặt lại dữ liệu | Như nút Chữ hoặc Phụ, luôn có hộp xác nhận | Medium Orchid + biểu tượng thùng rác; không chỉ dựa vào màu |
 | **Lựa chọn** (chip) | Chọn một trong vài giá trị: ngôn ngữ, mục tiêu XP, giao diện | Viên thuốc bo tròn | Đang chọn: nền Pale Lavender, viền màu nhận diện |
 
@@ -237,3 +237,46 @@ Hôm nay · Lịch · Thói quen · Tôi — **Có**, 4 mục.
 | Lưu ý kỹ thuật | Ba app đang ở ba địa chỉ web khác nhau, nên hiệu ứng gồm hai nửa: nửa "rời đi" trong app cũ và nửa "đến" trong app mới. Muốn liền mạch hoàn toàn và giữ đăng nhập chắc chắn, ba app nên ở chung một địa chỉ (ví dụ olaa.web.app/language, /note, /habits) — cần ADR riêng |
 | 7.3b | C: bỏ nút chuông. Dòng trên cùng bên phải chỉ có bộ chuyển app và nút "+" (ở màn hình có thêm mới). Thứ tự từ trái sang: nút "+", rồi bộ chuyển app. Ước lượng ở màn 320px: viên thuốc ~110px + 2 nút tròn 88px + nút "+" 44px + khoảng cách ~24px ≈ 266px, vừa trong 288px (đã trừ lề 16px mỗi bên); kiểm tra lại khi làm | 2026-11-20 |
 | 7.4 | B: thanh công cụ TakeNote là viên thuốc đen nổi (giống thanh điều hướng của ảnh mẫu), kéo được đến cạnh trên, dưới, trái hoặc phải. Yêu cầu kèm theo: tự bám vào cạnh gần nhất khi thả; nhớ vị trí cho từng thiết bị; khi đặt ở cạnh trái/phải thì xếp dọc; có tay nắm để kéo, không kéo khi đang vẽ; không che phần trang đang viết (trang tự chừa lề phía có thanh); vẫn dùng được bằng bàn phím | 2026-11-20 |
+
+## 9. Bộ biểu tượng Olaa (2026-11-21)
+
+Chủ dự án gửi bộ 20 biểu tượng chức năng và biểu tượng app; thay cho Phosphor (PRD UI/UX, câu 5b, 5c). File ở `packages/design-system/`.
+
+### 9.1 Gắn biểu tượng vào nút (đề xuất, chủ dự án sửa nếu cần)
+
+| Biểu tượng | Dùng ở |
+|---|---|
+| `language` | Bộ chuyển app: Olaa Language · Lựa chọn ngôn ngữ giao diện và ngôn ngữ học |
+| `note` | Bộ chuyển app: Olaa Note · Thanh điều hướng TakeNote: Thư viện |
+| `habits` | Bộ chuyển app: Olaa Habits · Thanh điều hướng Habits: Hôm nay |
+| `lessons` | Thanh điều hướng Language: Học · Giới thiệu bài |
+| `progress` | Thanh điều hướng Language: Lộ trình · Thẻ tóm tắt tiến độ |
+| `collections` | Thanh điều hướng Language: Chủ đề · Habits: Thói quen · TakeNote: Danh sách trang |
+| `goals` | Thanh điều hướng Language: Luyện tập · Mục tiêu ngày |
+| `vocabulary` | Thanh điều hướng Language: Thẻ từ |
+| `profile` | Thanh điều hướng: Hồ sơ (Language), Tôi (Habits) · Khối tài khoản Olaa ID |
+| `calendar` | Thanh điều hướng Habits: Lịch |
+| `listening` | Nút Nghe, Nghe chậm · Không nghe được lúc này |
+| `speaking` | Tôi đã nói to câu này |
+| `achievement` | Màn xong bài, kết quả kiểm tra cấp độ, chuỗi ngày |
+| `edit` | Sửa thói quen · Đổi tên sổ, đổi tên thẻ |
+| `bookmark` | Yêu thích sổ tay |
+| `delete` | Mọi nút Nguy hiểm: xoá sổ, xoá trang, xoá mục, thùng rác, xoá toàn bộ dữ liệu |
+| `search` | Ô tìm kiếm TakeNote |
+| `settings` | Cài đặt (TakeNote, và mục cài đặt trong Hồ sơ / Tôi) |
+| `more` | Tuỳ chọn (⋯) của mỗi thói quen, mỗi sổ tay |
+| `notifications` | Chưa dùng: nút chuông đã bỏ (câu 7.3b). Giữ trong bộ để dùng khi có nhắc nhở |
+
+### 9.2 Biểu tượng nút cần mà bộ 20 chưa có
+
+| Nhóm | Biểu tượng thiếu | Nút dùng |
+|---|---|---|
+| Cơ bản | Thêm (+) · Đóng (×) · Quay lại (←) · Trước / Sau (‹ ›) | Thêm thói quen, đóng bài học, quay lại, đổi tháng, đổi trang |
+| Đúng / sai | Dấu ✓ · Dấu ✗ | Kết quả bài làm (bắt buộc, vì màu đúng/sai cùng tông tím) |
+| Habits | Đóng băng (bông tuyết) · Tạm dừng · Tiếp tục | Thẻ đóng băng, tạm dừng thói quen |
+| TakeNote | Bút · Dạ quang · Tẩy · Chữ · Chọn · Hoàn tác · Làm lại · Chèn ảnh · Đính kèm · PDF · Thu phóng · Lưu trữ · định dạng chữ (đậm, nghiêng, danh sách…) | Thanh công cụ nổi, thư viện |
+| Chung | Sáng / Tối (mặt trời, mặt trăng) · Tải xuống · Đăng xuất | Cài đặt |
+
+| # | Câu hỏi | Gợi ý |
+|---|---|---|
+| 9.a | Các biểu tượng ở mục 9.2: bạn gửi thêm, hay để tôi vẽ theo cùng phong cách (nét đặc, góc bo tròn)? | Tôi vẽ nhóm Cơ bản, Đúng/sai, Chung; bạn gửi nhóm TakeNote |

@@ -60,7 +60,7 @@ Tổng: 229 module trong 22 nhánh.
 | 03.13 | export-sharing | 03 | repository `olaa-takenote` (đường dẫn trong repo chưa chốt) | TakeNote domain | NOT STARTED | [spec](03-olaa-takenote/modules/03.13-export-sharing.md) |
 | 03.14 | offline-sync | 03 | repository `olaa-takenote` (đường dẫn trong repo chưa chốt) | TakeNote domain | NOT STARTED | [spec](03-olaa-takenote/modules/03.14-offline-sync.md) |
 | 03.15 | takenote-settings | 03 | repository `olaa-takenote` (đường dẫn trong repo chưa chốt) | TakeNote domain | NOT STARTED | [spec](03-olaa-takenote/modules/03.15-takenote-settings.md) |
-| 04.01 | design-system | 04 | `olaa-platform/packages/design-system/` | Platform engineering | NOT STARTED | [spec](04-shared-core/modules/04.01-design-system.md) |
+| 04.01 | design-system | 04 | `olaa-platform/packages/design-system/` | Platform engineering | IN PROGRESS | [spec](04-shared-core/modules/04.01-design-system.md) |
 | 04.02 | shared-ui | 04 | `olaa-platform/packages/shared-ui/` | Platform engineering | NOT STARTED | [spec](04-shared-core/modules/04.02-shared-ui.md) |
 | 04.03 | authentication | 04 | `olaa-platform/packages/authentication/` | Platform engineering | NOT STARTED | [spec](04-shared-core/modules/04.03-authentication.md) |
 | 04.04 | authorization | 04 | `olaa-platform/packages/authorization/` | Platform engineering | NOT STARTED | [spec](04-shared-core/modules/04.04-authorization.md) |

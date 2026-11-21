@@ -42,7 +42,7 @@ Skill gợi ý thêm theo loại sản phẩm:
 Quy tắc UX skill coi là bắt buộc, áp dụng dù chọn hướng nào:
 - Chữ thường tương phản ít nhất 4.5:1 ở cả chế độ sáng và tối.
 - Vùng chạm tối thiểu 44×44 px; nút có trạng thái nhấn rõ, không làm xô lệch bố cục.
-- Không dùng emoji làm biểu tượng điều hướng hay điều khiển; dùng một bộ SVG thống nhất (skill đề xuất Phosphor).
+- Không dùng emoji làm biểu tượng điều hướng hay điều khiển; dùng một bộ SVG thống nhất (skill đề xuất Phosphor; chủ dự án thay bằng bộ biểu tượng Olaa, xem câu 5b).
 - Tôn trọng "giảm chuyển động" của hệ điều hành; onboarding luôn có nút Bỏ qua và Quay lại.
 - Thiết kế cho điện thoại trước, kiểm tra ở 375, 768, 1024, 1440 px.
 
@@ -125,3 +125,10 @@ Hệ quả của 7b: chữ chính dùng đen trên nền sáng (đen trên Pale 
 | Chữ | To, nét mảnh ở tiêu đề, nhiều khoảng trống | SF / Inter, tiêu đề 28–32px nét thường, nội dung 15–17px |
 | Nền | Trắng / xám rất nhạt | Pale Purple ở chế độ sáng, đen ở chế độ tối |
 | 12 | Không có yêu cầu loại trừ thêm | 2026-11-20 |
+| 5b | Thay Phosphor bằng bộ biểu tượng riêng của Olaa do chủ dự án gửi: 20 biểu tượng nét đặc cho các chức năng (bài học, từ vựng, nghe, nói, ngôn ngữ, lịch, tiến độ, thói quen, thành tích, mục tiêu, ghi chú, sửa, bộ sưu tập, đánh dấu, xoá, tìm kiếm, thông báo, cài đặt, hồ sơ, thêm). Biểu tượng tô theo màu chữ, dùng màu trong bảng 7 màu | 2026-11-21 |
+| 5c | Biểu tượng app: tấm vé vàng trên nền bo góc trắng (chế độ sáng) hoặc đen `#151515` (chế độ tối). Dùng chung cho cả 3 app và trang giới thiệu | 2026-11-21 |
+
+Hệ quả của 5b và 5c:
+- File nằm ở `packages/design-system/` (module 04.01), cách dùng ghi trong README của package.
+- Màu vàng của vé (`#FFD84D` → `#F5B900`) nằm ngoài bảng 7 màu. Đây là ngoại lệ duy nhất, chỉ cho biểu tượng app; giao diện bên trong app vẫn chỉ dùng 7 màu.
+- Bộ 20 biểu tượng chưa có một số biểu tượng mà nút trong app cần; danh sách ở `UI_BUTTONS_PRD_v0.1.md`, mục 9.
