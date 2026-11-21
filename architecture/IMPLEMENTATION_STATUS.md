@@ -23,9 +23,9 @@ Không đánh dấu IMPLEMENTED khi mới có thư mục hoặc file khung.
 |---|---|---|---|---|---|---|
 | 00 | [OLAA PLATFORM](00-olaa-platform/README.md) | SCAFFOLDED | NOT STARTED | 7 | `olaa-platform` | — |
 | 01 | [OLAA LANGUAGE](01-olaa-language/README.md) | SCAFFOLDED | NOT STARTED | 14 | `olaa-language` | — |
-| 02 | [OLAA HABITS](02-olaa-habits/README.md) | SCAFFOLDED | NOT STARTED | 12 | `olaa-habits` | — |
-| 03 | [OLAA TAKENOTE](03-olaa-takenote/README.md) | SCAFFOLDED | NOT STARTED | 15 | `olaa-takenote` | — |
-| 04 | [SHARED CORE](04-shared-core/README.md) | SCAFFOLDED | NOT STARTED | 13 | `olaa-platform` | — |
+| 02 | [OLAA HABITS](02-olaa-habits/README.md) | SCAFFOLDED | IN PROGRESS | 12 | `olaa-habits` | MVP P0 + đăng nhập/đồng bộ trên branch `feat/habits-mvp` |
+| 03 | [OLAA TAKENOTE](03-olaa-takenote/README.md) | SCAFFOLDED | IN PROGRESS | 15 | `olaa-takenote` | MVP P0 (lưu trên máy) trên branch `feat/takenote-mvp` |
+| 04 | [SHARED CORE](04-shared-core/README.md) | SCAFFOLDED | IN PROGRESS | 13 | `olaa-platform` | 04.01: bộ biểu tượng chức năng và biểu tượng app trong `packages/design-system/` (chưa có token, component) |
 | 05 | [BACKEND SERVICES](05-backend-services/README.md) | SCAFFOLDED | NOT STARTED | 14 | `olaa-platform` | — |
 | 06 | [CONTENT MANAGEMENT](06-content-management/README.md) | SCAFFOLDED | NOT STARTED | 10 | `olaa-platform` | — |
 | 07 | [DATABASE ARCHITECTURE](07-database-architecture/README.md) | SCAFFOLDED | NOT STARTED | 12 | `olaa-platform` | — |
@@ -48,7 +48,8 @@ Không đánh dấu IMPLEMENTED khi mới có thư mục hoặc file khung.
 
 | Quyết định | Ảnh hưởng nhánh | Trạng thái |
 |---|---|---|
-| Nền tảng client chính (web, native iPad/iOS, cross-platform) | 00, 01, 02, 03, 04 | Chưa chốt |
-| Framework frontend/backend và công cụ build | 00, 04, 05, 09 | Chưa chốt |
+| Nền tảng client chính (web, native iPad/iOS, cross-platform) | 00, 01, 02, 03, 04 | Đã chốt: web responsive ([ADR-0003](DECISIONS/ADR-0003-web-client-platform.md)) |
+| Framework frontend/backend và công cụ build | 00, 04, 05, 09 | Đã chốt: React + Vite + TypeScript ([ADR-0003](DECISIONS/ADR-0003-web-client-platform.md)); Firebase và Cloud Functions ([ADR-0004](DECISIONS/ADR-0004-firebase-backend.md)) |
 | Cách phát hành shared packages cho repository app | 04, 13, 20 | Chưa chốt |
-| Auth provider | 00, 05, 08, 16 | Chưa chốt |
+| Auth provider | 00, 05, 08, 16 | Đã chốt: Firebase Authentication ([ADR-0004](DECISIONS/ADR-0004-firebase-backend.md)) |
+| Cổng thanh toán cụ thể | 05, 14 | Chưa chốt; đã chọn nhóm cổng Việt Nam ([ADR-0005](DECISIONS/ADR-0005-vietnam-payment-gateway.md)) |

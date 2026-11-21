@@ -5,4 +5,4 @@ Nơi ghi yêu cầu chức năng và phi chức năng của nhánh 02. Mỗi yê
 | Mã | Module | Yêu cầu | Ưu tiên | Acceptance criteria | Trạng thái |
 |---|---|---|---|---|---|
 
-Chưa có yêu cầu được phê duyệt.
+Chưa có yêu cầu được phê duyệt. Bản nháp yêu cầu sản phẩm: [PRD.md](PRD.md) (DRAFT, chờ duyệt).

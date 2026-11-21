@@ -6,6 +6,9 @@ Mỗi quyết định kiến trúc quan trọng có một file `ADR-NNNN-<slug>.
 |---|---|---|---|
 | [ADR-0001](ADR-0001-four-repository-model.md) | Mô hình 4 repository thay cho monorepo | Accepted | 2026-11-18 |
 | [ADR-0002](ADR-0002-product-naming.md) | Thương hiệu Olaa và tên sản phẩm | Accepted | 2026-11-18 |
+| [ADR-0003](ADR-0003-web-client-platform.md) | Web responsive là nền tảng client của cả ba app | Accepted | 2026-11-19 |
+| [ADR-0004](ADR-0004-firebase-backend.md) | Firebase làm backend và auth provider | Accepted | 2026-11-19 |
+| [ADR-0005](ADR-0005-vietnam-payment-gateway.md) | Thu phí thuê bao qua cổng thanh toán Việt Nam | Accepted (chưa chọn cổng cụ thể) | 2026-11-19 |
 
 ## Mẫu
 

@@ -1,0 +1,46 @@
+const fs = require('fs');
+const { initializeTestEnvironment, assertSucceeds, assertFails } = require('@firebase/rules-unit-testing');
+const { doc, setDoc, getDoc, getDocs, collection, query, where, deleteDoc, updateDoc } = require('firebase/firestore');
+const results = [];
+async function check(name, p) { try { await p; results.push(['PASS', name]); } catch (e) { results.push(['FAIL', name, e.message]); } }
+(async () => {
+  const env = await initializeTestEnvironment({ projectId: 'demo-olaa', firestore: { rules: fs.readFileSync(require('path').join(__dirname, '..', 'firestore.rules'), 'utf8'), host: '127.0.0.1', port: 8085 } });
+  const alice = env.authenticatedContext('alice').firestore();
+  const bob = env.authenticatedContext('bob').firestore();
+  const anon = env.unauthenticatedContext().firestore();
+  const sync = { stateJson: '{"version":1}', updatedAt: 1, schemaVersion: 1 };
+  const goal = { type: 'language.daily_goal.completed', date: '2026-11-19', payload: { courseId: 'en-from-vi', xp: 20, goalXp: 20 }, userId: 'alice', occurredAt: 1, source: 'language' };
+  const goalId = 'alice_language.daily_goal.completed_2026-11-19';
+  const lessonId = 'alice_language.lesson.completed_en-from-vi_u1-greetings';
+  // Envelope v1 (contracts/events/language-events.md): id and version in the body.
+  const lesson = { id: lessonId, version: 1, type: 'language.lesson.completed', date: '2026-11-19', payload: { courseId: 'en-from-vi', lessonId: 'u1-greetings' }, userId: 'alice', occurredAt: 1, source: 'language' };
+
+  await check('language: owner writes', assertSucceeds(setDoc(doc(alice, 'language/alice'), sync)));
+  await check('language: other user reads → denied', assertFails(getDoc(doc(bob, 'language/alice'))));
+  await check('habits: owner writes', assertSucceeds(setDoc(doc(alice, 'habits/alice'), sync)));
+  await check('habits: owner reads', assertSucceeds(getDoc(doc(alice, 'habits/alice'))));
+  await check('habits: other user writes → denied', assertFails(setDoc(doc(bob, 'habits/alice'), sync)));
+  await check('habits: extra field → denied', assertFails(setDoc(doc(alice, 'habits/alice'), { ...sync, x: 1 })));
+  await check('events: Language daily goal (pre-v1 shape still accepted)', assertSucceeds(setDoc(doc(alice, 'events', goalId), goal)));
+  await check('events: envelope v1 with wrong id → denied', assertFails(setDoc(doc(alice, 'events', 'alice_v1a'), { ...lesson, id: 'alice_other' })));
+  await check('events: unknown envelope version → denied', assertFails(setDoc(doc(alice, 'events', 'alice_v1b'), { ...lesson, id: 'alice_v1b', version: 2 })));
+  await check('events: version as text → denied', assertFails(setDoc(doc(alice, 'events', 'alice_v1c'), { ...lesson, id: 'alice_v1c', version: '1' })));
+  await check('events: Language new lesson (envelope v1)', assertSucceeds(setDoc(doc(alice, 'events', lessonId), lesson)));
+  await check('events: repeat write of same event → denied (immutable)', assertFails(setDoc(doc(alice, 'events', goalId), goal)));
+  await check('events: update → denied', assertFails(updateDoc(doc(alice, 'events', goalId), { date: '2026-11-18' })));
+  await check('events: delete → denied', assertFails(deleteDoc(doc(alice, 'events', goalId))));
+  await check('events: forge for another user → denied', assertFails(setDoc(doc(bob, 'events', 'alice_x'), goal)));
+  await check('events: id not starting with own uid → denied', assertFails(setDoc(doc(alice, 'events', 'bob_x'), goal)));
+  await check('events: unknown type → denied', assertFails(setDoc(doc(alice, 'events', 'alice_y'), { ...goal, type: 'habits.hacked' })));
+  await check('events: bad date → denied', assertFails(setDoc(doc(alice, 'events', 'alice_z'), { ...goal, date: 'today' })));
+  await check('events: anonymous write → denied', assertFails(setDoc(doc(anon, 'events', 'alice_w'), goal)));
+  await check('events: Habits query own events (listener shape)', assertSucceeds(getDocs(query(collection(alice, 'events'), where('userId', '==', 'alice')))));
+  await check('events: query without userId filter → denied', assertFails(getDocs(collection(alice, 'events'))));
+  await check('events: query other user events → denied', assertFails(getDocs(query(collection(bob, 'events'), where('userId', '==', 'alice')))));
+  await check('other collections → denied', assertFails(setDoc(doc(alice, 'takenote/alice'), sync)));
+  const n = (await getDocs(query(collection(alice, 'events'), where('userId', '==', 'alice')))).size;
+  results.push([n === 2 ? 'PASS' : 'FAIL', `Habits sees exactly its 2 events (got ${n})`]);
+  for (const r of results) console.log(r.join('  '));
+  console.log(`${results.filter(r => r[0] === 'PASS').length}/${results.length} passed`);
+  await env.cleanup(); process.exit(results.some(r => r[0] === 'FAIL') ? 1 : 0);
+})();
