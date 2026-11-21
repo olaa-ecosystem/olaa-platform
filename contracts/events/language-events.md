@@ -35,8 +35,8 @@ Mỗi event là một document bất biến trong `events/{eventId}`:
 
 | `type` | Khi nào | `payload` | `eventId` |
 |---|---|---|---|
-| `language.daily_goal.completed` | XP trong ngày vượt mục tiêu ngày lần đầu | `courseId`, `xp`, `goalXp` | `{uid}_language.daily_goal.completed_{date}` |
-| `language.lesson.completed` | Hoàn thành một bài lần đầu (bài mới, không tính học lại); với lộ trình cấp độ, `courseId` là `en-vi`, `es-vi` hoặc `zh-vi` và `lessonId` là mã bài | `courseId`, `lessonId` | `{uid}_language.lesson.completed_{courseId}_{lessonId}` |
+| `language.daily_goal.completed` | XP trong ngày vượt mục tiêu ngày lần đầu; `courseId` là ngôn ngữ đang học | `courseId`, `xp`, `goalXp` | `{uid}_language.daily_goal.completed_{date}` |
+| `language.lesson.completed` | Hoàn thành một bài lần đầu (bài mới, không tính học lại); `lessonId` là mã bài trong lộ trình cấp độ | `courseId`, `lessonId` | `{uid}_language.lesson.completed_{courseId}_{lessonId}` |
 
 Chưa có (PRD 02, P1 sau): `language.speaking.attempted`, `language.flashcard.created`.
 
@@ -47,3 +47,5 @@ Chưa có (PRD 02, P1 sau): `language.speaking.attempted`, `language.flashcard.c
 - Không ghi, sửa hay xoá event.
 - Bỏ qua event có `version` lớn hơn version mình hỗ trợ.
 - Event có thể đến trễ (người học offline). Consumer phải tính lại kết quả khi event mới đến.
+
+`courseId` luôn là `en-vi`, `es-vi` hoặc `zh-vi` (tiếng Anh, Tây Ban Nha, Trung cho người Việt). Từ 2026-11-21 khoá học cũ `en-from-vi` và `vi-from-en` đã bị xoá; event cũ mang hai mã này vẫn hợp lệ với consumer vì consumer không dựa vào `courseId`.
