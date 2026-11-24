@@ -29,6 +29,8 @@ olaa-platform/
 │   ├── DEPENDENCY_MAP.md
 │   ├── IMPLEMENTATION_STATUS.md
 │   └── INTEGRATION_CHANGELOG.md
+├── prototypes/
+│   └── takenote-ipad-home/           # bản mẫu giao diện iPad, không phải mã sản phẩm (ADR-0003)
 ├── scripts/
 │   └── check_architecture.py         # kiểm tra cấu trúc tài liệu, chạy trong CI
 ├── .github/

@@ -6,6 +6,7 @@ Mỗi quyết định kiến trúc quan trọng có một file `ADR-NNNN-<slug>.
 |---|---|---|---|
 | [ADR-0001](ADR-0001-four-repository-model.md) | Mô hình 4 repository thay cho monorepo | Accepted | 2026-11-18 |
 | [ADR-0002](ADR-0002-product-naming.md) | Thương hiệu Olaa và tên sản phẩm | Accepted | 2026-11-18 |
+| [ADR-0003](ADR-0003-design-prototypes-folder.md) | Thư mục `prototypes/` cho bản mẫu giao diện | Proposed | 2026-11-24 |
 
 ## Mẫu
 

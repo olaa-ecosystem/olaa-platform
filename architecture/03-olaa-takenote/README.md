@@ -46,7 +46,9 @@ Toàn bộ phạm vi chi tiết: `architecture/OLAA_MASTER_ARCHITECTURE.md`, m�
 ## 5. Source code location
 repository `olaa-takenote`
 
-Chưa có mã nguồn.
+Chưa có mã nguồn sản phẩm.
+
+Bản mẫu giao diện iPad (không phải mã sản phẩm, không tính vào trạng thái module): [`prototypes/takenote-ipad-home/`](../../prototypes/takenote-ipad-home/README.md), kèm [đánh giá](../../prototypes/takenote-ipad-home/REVIEW.md). Bản mẫu này là đầu vào cho đặc tả 03.04, 03.05, 03.06 (ADR-0003, Proposed).
 
 ## 6. Dependencies
 - [00 Olaa Platform](../00-olaa-platform/README.md) — interface: chưa định nghĩa
